@@ -238,6 +238,30 @@ html {
         height: 60px;
         font-size: 1.5rem;
     }
+    
+    /* Mobile Product Cards */
+    #bateriasCardsContainer .card,
+    #cargadoresCardsContainer .card {
+        transition: all 0.3s ease;
+    }
+    
+    #bateriasCardsContainer .card:hover,
+    #cargadoresCardsContainer .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    }
+    
+    #bateriasCardsContainer .card-title,
+    #cargadoresCardsContainer .card-title {
+        font-size: 1rem;
+    }
+    
+    #bateriasCardsContainer small,
+    #cargadoresCardsContainer small {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 }
 
 /* Badge Styles */

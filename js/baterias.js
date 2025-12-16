@@ -116,6 +116,7 @@ const tipoFilter = document.getElementById('tipoFilter');
 const voltajeFilter = document.getElementById('voltajeFilter');
 const clearFiltersBtn = document.getElementById('clearFilters');
 const tableBody = document.getElementById('bateriasTableBody');
+const cardsContainer = document.getElementById('bateriasCardsContainer');
 const noResults = document.getElementById('noResults');
 
 // Initialize
@@ -132,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Render table
 function renderTable() {
     tableBody.innerHTML = '';
+    cardsContainer.innerHTML = '';
     
     if (filteredData.length === 0) {
         noResults.classList.remove('d-none');
@@ -140,6 +142,7 @@ function renderTable() {
     
     noResults.classList.add('d-none');
     
+    // Render desktop table
     filteredData.forEach((bateria, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -158,6 +161,43 @@ function renderTable() {
         
         // Add event listener to the button
         const button = row.querySelector('button');
+        button.addEventListener('click', () => showDetails(index));
+    });
+    
+    // Render mobile cards
+    filteredData.forEach((bateria, index) => {
+        const card = document.createElement('div');
+        card.className = 'card border-0 shadow-sm mb-3';
+        card.innerHTML = `
+            <div class="card-body">
+                <h5 class="card-title fw-bold text-orange mb-3">${bateria.modelo}</h5>
+                <div class="row g-2 mb-3">
+                    <div class="col-6">
+                        <small class="text-muted d-block">Tipo</small>
+                        <span class="badge badge-orange">${bateria.tipo}</span>
+                    </div>
+                    <div class="col-6">
+                        <small class="text-muted d-block">Voltaje</small>
+                        <strong>${bateria.voltaje}</strong>
+                    </div>
+                    <div class="col-6">
+                        <small class="text-muted d-block">Capacidad</small>
+                        <strong>${bateria.capacidad}</strong>
+                    </div>
+                    <div class="col-6">
+                        <small class="text-muted d-block">Aplicación</small>
+                        <strong>${bateria.aplicacion}</strong>
+                    </div>
+                </div>
+                <button class="btn btn-orange btn-sm w-100" data-index="${index}">
+                    <i class="bi bi-eye me-1"></i>Ver Detalles
+                </button>
+            </div>
+        `;
+        cardsContainer.appendChild(card);
+        
+        // Add event listener to the button
+        const button = card.querySelector('button');
         button.addEventListener('click', () => showDetails(index));
     });
 }

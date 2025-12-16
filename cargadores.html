@@ -31,10 +31,10 @@
                         <a class="nav-link" href="index.html#servicios">Servicios</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Baterías
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="baterias/traccion-pb-ac.html">Tracción Pb Ac</a></li>
                             <li><a class="dropdown-item" href="baterias/traccion-ion-li.html">Tracción Ion Li</a></li>
                             <li><a class="dropdown-item" href="baterias/ciclado-profundo-pb-ac.html">Ciclado Profundo Pb Ac</a></li>
@@ -102,10 +102,11 @@
         </div>
     </section>
 
-    <!-- Products Table -->
+    <!-- Products Table (Desktop) -->
     <section class="py-5">
         <div class="container">
-            <div class="card border-0 shadow-sm">
+            <!-- Desktop Table View -->
+            <div class="card border-0 shadow-sm d-none d-md-block">
                 <div class="card-body p-0">
                     <div class="table-responsive">
                         <table class="table table-hover mb-0" id="cargadoresTable">
@@ -126,6 +127,12 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Mobile Card View -->
+            <div class="d-md-none" id="cargadoresCardsContainer">
+                <!-- Cards will be populated by JavaScript -->
+            </div>
+            
             <div id="noResults" class="alert alert-info mt-3 d-none">
                 <i class="bi bi-info-circle me-2"></i>No se encontraron resultados para los filtros seleccionados.
             </div>
