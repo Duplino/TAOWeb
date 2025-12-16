@@ -196,8 +196,8 @@ function showDetails(index) {
 function downloadPDF(product) {
     if (product.pdfUrl) {
         // In a real scenario, this would trigger an actual download
-        // For now, we'll show an alert since PDFs don't exist yet
-        alert(`Descargando ficha técnica de ${product.modelo}...\n\nRuta: ${product.pdfUrl}\n\nNota: En producción, esto descargará el PDF real.`);
+        // For now, we'll show a message since PDFs don't exist yet
+        showNotification(`Descargando ficha técnica de ${product.modelo}...`, 'info');
         
         // Uncomment this for actual PDF download when files are available
         // window.open(product.pdfUrl, '_blank');
@@ -210,6 +210,31 @@ function downloadPDF(product) {
         // link.click();
         // document.body.removeChild(link);
     } else {
-        alert('Ficha técnica no disponible para este modelo.');
+        showNotification('Ficha técnica no disponible para este modelo.', 'warning');
     }
+}
+
+// Show notification function (simple toast-like notification)
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `alert alert-${type === 'info' ? 'orange' : 'warning'} position-fixed top-0 start-50 translate-middle-x mt-3`;
+    notification.style.zIndex = '9999';
+    notification.style.minWidth = '300px';
+    notification.innerHTML = `
+        <i class="bi bi-${type === 'info' ? 'info-circle' : 'exclamation-triangle'} me-2"></i>
+        ${message}
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transition = 'opacity 0.5s';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 500);
+    }, 3000);
 }
