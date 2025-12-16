@@ -1,0 +1,92 @@
+{
+  "columns": [
+    { "key": "modelo", "label": "Modelo" },
+    { "key": "tipo", "label": "Tipo" },
+    { "key": "voltaje", "label": "Voltaje" },
+    { "key": "capacidad", "label": "Capacidad (Ah)" },
+    { "key": "ciclos", "label": "Ciclos de Vida" },
+    { "key": "aplicacion", "label": "Aplicación" }
+  ],
+  "data": [
+    {
+      "modelo": "DC-AGM-12V-100AH",
+      "tipo": "AGM",
+      "voltaje": "12V",
+      "capacidad": "100Ah",
+      "ciclos": "800 (50% DOD)",
+      "aplicacion": "Solar, RV, Náutica",
+      "caracteristicas": [
+        "Tecnología AGM sellada",
+        "Libre de mantenimiento",
+        "Baja autodescarga",
+        "Resistente a vibraciones",
+        "Instalación en cualquier posición"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/DC-AGM-12V-100AH.pdf"
+    },
+    {
+      "modelo": "DC-GEL-12V-200AH",
+      "tipo": "Gel",
+      "voltaje": "12V",
+      "capacidad": "200Ah",
+      "ciclos": "1200 (50% DOD)",
+      "aplicacion": "Solar off-grid, Telecomunicaciones",
+      "caracteristicas": [
+        "Electrolito en gel",
+        "Mayor vida útil que AGM",
+        "Excelente para temperaturas extremas",
+        "Recuperación profunda de descarga",
+        "Sin emisión de gases"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/DC-GEL-12V-200AH.pdf"
+    },
+    {
+      "modelo": "DC-AGM-6V-225AH",
+      "tipo": "AGM",
+      "voltaje": "6V",
+      "capacidad": "225Ah",
+      "ciclos": "900 (50% DOD)",
+      "aplicacion": "Carritos de golf, RV",
+      "caracteristicas": [
+        "Diseño para uso en serie",
+        "Alta corriente de descarga",
+        "Construcción robusta",
+        "Placas gruesas de plomo puro",
+        "Rango amplio de temperatura"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/DC-AGM-6V-225AH.pdf"
+    },
+    {
+      "modelo": "DC-GEL-12V-150AH",
+      "tipo": "Gel",
+      "voltaje": "12V",
+      "capacidad": "150Ah",
+      "ciclos": "1500 (30% DOD)",
+      "aplicacion": "Sistemas solares, Embarcaciones",
+      "caracteristicas": [
+        "Tecnología VRLA avanzada",
+        "Máxima profundidad de descarga",
+        "Larga vida flotante (12+ años)",
+        "Baja corrosión de rejillas",
+        "Certificaciones internacionales"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/DC-GEL-12V-150AH.pdf"
+    },
+    {
+      "modelo": "DC-AGM-12V-75AH",
+      "tipo": "AGM",
+      "voltaje": "12V",
+      "capacidad": "75Ah",
+      "ciclos": "700 (50% DOD)",
+      "aplicacion": "Solar pequeña escala, UPS",
+      "caracteristicas": [
+        "Compacta y eficiente",
+        "Diseño de alta densidad",
+        "Rápida recarga",
+        "Sin mantenimiento",
+        "Precio competitivo"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/DC-AGM-12V-75AH.pdf"
+    }
+  ]
+}

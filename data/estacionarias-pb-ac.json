@@ -1,0 +1,92 @@
+{
+  "columns": [
+    { "key": "modelo", "label": "Modelo" },
+    { "key": "tipo", "label": "Tipo" },
+    { "key": "voltaje", "label": "Voltaje" },
+    { "key": "capacidad", "label": "Capacidad (Ah @ C10)" },
+    { "key": "vidaFlotante", "label": "Vida Flotante (años)" },
+    { "key": "aplicacion", "label": "Aplicación" }
+  ],
+  "data": [
+    {
+      "modelo": "EST-AGM-12V-100AH",
+      "tipo": "AGM",
+      "voltaje": "12V",
+      "capacidad": "100Ah",
+      "vidaFlotante": "10",
+      "aplicacion": "UPS, Telecomunicaciones",
+      "caracteristicas": [
+        "Tecnología VRLA AGM",
+        "Muy baja tasa de autodescarga",
+        "Excelente recuperación de descarga",
+        "Montaje en rack disponible",
+        "Certificación ISO 9001"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/EST-AGM-12V-100AH.pdf"
+    },
+    {
+      "modelo": "EST-GEL-12V-200AH",
+      "tipo": "Gel",
+      "voltaje": "12V",
+      "capacidad": "200Ah",
+      "vidaFlotante": "15",
+      "aplicacion": "Telecomunicaciones, Data Centers",
+      "caracteristicas": [
+        "Larga vida útil en flotación",
+        "Tecnología Gel avanzada",
+        "Resistente a temperaturas extremas",
+        "Sin emisiones de gases",
+        "Conectores tipo terminal frontal"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/EST-GEL-12V-200AH.pdf"
+    },
+    {
+      "modelo": "EST-AGM-2V-1000AH",
+      "tipo": "AGM",
+      "voltaje": "2V",
+      "capacidad": "1000Ah",
+      "vidaFlotante": "12",
+      "aplicacion": "Bancos de baterías grandes",
+      "caracteristicas": [
+        "Celda individual de 2V",
+        "Diseño Front Access",
+        "Alta corriente de descarga",
+        "Ideal para sistemas bancarios",
+        "Mantenimiento mínimo"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/EST-AGM-2V-1000AH.pdf"
+    },
+    {
+      "modelo": "EST-GEL-12V-150AH",
+      "tipo": "Gel",
+      "voltaje": "12V",
+      "capacidad": "150Ah",
+      "vidaFlotante": "12",
+      "aplicacion": "UPS, Sistemas críticos",
+      "caracteristicas": [
+        "Tecnología de gel estabilizado",
+        "Baja impedancia interna",
+        "Excelente rendimiento a baja temperatura",
+        "Diseño modular",
+        "Garantía extendida disponible"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/EST-GEL-12V-150AH.pdf"
+    },
+    {
+      "modelo": "EST-AGM-12V-65AH",
+      "tipo": "AGM",
+      "voltaje": "12V",
+      "capacidad": "65Ah",
+      "vidaFlotante": "8",
+      "aplicacion": "Alarmas, Iluminación emergencia",
+      "caracteristicas": [
+        "Compacta y eficiente",
+        "Rápida instalación",
+        "Sellado hermético",
+        "Múltiples posiciones de montaje",
+        "Relación precio-calidad óptima"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/EST-AGM-12V-65AH.pdf"
+    }
+  ]
+}

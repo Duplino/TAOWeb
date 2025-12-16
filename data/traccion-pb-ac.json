@@ -1,0 +1,87 @@
+{
+  "columns": [
+    { "key": "modelo", "label": "Modelo" },
+    { "key": "voltaje", "label": "Voltaje" },
+    { "key": "capacidad", "label": "Capacidad (Ah)" },
+    { "key": "peso", "label": "Peso (kg)" },
+    { "key": "dimensiones", "label": "Dimensiones (mm)" },
+    { "key": "aplicacion", "label": "Aplicación" }
+  ],
+  "data": [
+    {
+      "modelo": "TRAC-24V-300AH",
+      "voltaje": "24V",
+      "capacidad": "300Ah",
+      "peso": "285",
+      "dimensiones": "470 x 200 x 470",
+      "aplicacion": "Montacargas pequeños",
+      "caracteristicas": [
+        "Placas tubulares para mayor durabilidad",
+        "Diseño para ciclos profundos",
+        "Mantenimiento cada 6 meses",
+        "Hasta 1200 ciclos de vida útil"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-24V-300AH.pdf"
+    },
+    {
+      "modelo": "TRAC-48V-500AH",
+      "voltaje": "48V",
+      "capacidad": "500Ah",
+      "peso": "620",
+      "dimensiones": "625 x 310 x 625",
+      "aplicacion": "Montacargas medianos",
+      "caracteristicas": [
+        "Alta resistencia a vibraciones",
+        "Separadores de alta calidad",
+        "Construcción robusta",
+        "Ideal para uso intensivo"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-48V-500AH.pdf"
+    },
+    {
+      "modelo": "TRAC-48V-775AH",
+      "voltaje": "48V",
+      "capacidad": "775Ah",
+      "peso": "950",
+      "dimensiones": "850 x 350 x 650",
+      "aplicacion": "Montacargas pesados",
+      "caracteristicas": [
+        "Máxima capacidad de carga",
+        "Diseño reforzado",
+        "Placas extra gruesas",
+        "Óptimo para turnos largos"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-48V-775AH.pdf"
+    },
+    {
+      "modelo": "TRAC-80V-400AH",
+      "voltaje": "80V",
+      "capacidad": "400Ah",
+      "peso": "890",
+      "dimensiones": "780 x 340 x 620",
+      "aplicacion": "Equipos industriales pesados",
+      "caracteristicas": [
+        "Alto voltaje para máxima potencia",
+        "Tecnología de placas tubulares",
+        "Excelente desempeño en frío",
+        "Mantenimiento predictivo"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-80V-400AH.pdf"
+    },
+    {
+      "modelo": "TRAC-36V-420AH",
+      "voltaje": "36V",
+      "capacidad": "420Ah",
+      "peso": "445",
+      "dimensiones": "550 x 280 x 550",
+      "aplicacion": "Transpaletas eléctricas",
+      "caracteristicas": [
+        "Diseño compacto",
+        "Fácil instalación",
+        "Bajo mantenimiento",
+        "Alta eficiencia energética"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-36V-420AH.pdf"
+    }
+  ]
+}
