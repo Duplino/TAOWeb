@@ -1,0 +1,97 @@
+{
+  "columns": [
+    { "key": "modelo", "label": "Modelo" },
+    { "key": "voltaje", "label": "Voltaje" },
+    { "key": "capacidad", "label": "Capacidad (Ah)" },
+    { "key": "energia", "label": "Energía (kWh)" },
+    { "key": "peso", "label": "Peso (kg)" },
+    { "key": "aplicacion", "label": "Aplicación" }
+  ],
+  "data": [
+    {
+      "modelo": "LI-EST-48V-100AH",
+      "voltaje": "48V",
+      "capacidad": "100Ah",
+      "energia": "4.8",
+      "peso": "52",
+      "aplicacion": "UPS, Telecomunicaciones",
+      "caracteristicas": [
+        "Tecnología LiFePO4 (LFP)",
+        "Rack mount 19\" compatible",
+        "BMS con comunicación RS485/CAN",
+        "Diseño modular expandible",
+        "Eficiencia 96%",
+        "Certificaciones UL, CE, UN38.3"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-48V-100AH.pdf"
+    },
+    {
+      "modelo": "LI-EST-48V-200AH",
+      "voltaje": "48V",
+      "capacidad": "200Ah",
+      "energia": "9.6",
+      "peso": "95",
+      "aplicacion": "Data Centers, UPS críticos",
+      "caracteristicas": [
+        "Alta densidad energética",
+        "Sistema de enfriamiento pasivo",
+        "Monitoreo remoto vía WiFi/4G",
+        "Protocolo SNMP integrado",
+        "Paralelización hasta 16 unidades",
+        "Garantía de 10 años"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-48V-200AH.pdf"
+    },
+    {
+      "modelo": "LI-EST-384V-150AH",
+      "voltaje": "384V",
+      "capacidad": "150Ah",
+      "energia": "57.6",
+      "peso": "480",
+      "aplicacion": "Almacenamiento solar comercial",
+      "caracteristicas": [
+        "Sistema de alta tensión",
+        "Inversor híbrido compatible",
+        "Dashboard de gestión energética",
+        "Peak shaving y arbitraje",
+        "Modo isla integrado",
+        "6000+ ciclos garantizados"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-384V-150AH.pdf"
+    },
+    {
+      "modelo": "LI-EST-51.2V-280AH",
+      "voltaje": "51.2V",
+      "capacidad": "280Ah",
+      "energia": "14.3",
+      "peso": "135",
+      "aplicacion": "Microgrids, ESS industrial",
+      "caracteristicas": [
+        "Diseño de gabinete outdoor",
+        "Protección IP65",
+        "Rango térmico extendido (-20°C a 55°C)",
+        "Sistema antiincendios integrado",
+        "Escalable hasta 1 MWh",
+        "Software de optimización incluido"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-51.2V-280AH.pdf"
+    },
+    {
+      "modelo": "LI-EST-48V-50AH",
+      "voltaje": "48V",
+      "capacidad": "50Ah",
+      "energia": "2.4",
+      "peso": "28",
+      "aplicacion": "Telecom, Small UPS",
+      "caracteristicas": [
+        "Ultra compacto y ligero",
+        "Instalación plug-and-play",
+        "Display LCD con información completa",
+        "Bluetooth integrado",
+        "Carga solar MPPT compatible",
+        "Precio competitivo"
+      ],
+      "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-48V-50AH.pdf"
+    }
+  ]
+}

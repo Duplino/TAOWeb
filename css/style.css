@@ -135,6 +135,28 @@ body {
     width: 100%;
 }
 
+/* Dropdown Menu Styles */
+.navbar-dark .dropdown-menu {
+    background-color: var(--tao-black);
+    border: 1px solid rgba(255, 102, 0, 0.3);
+}
+
+.navbar-dark .dropdown-item {
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.navbar-dark .dropdown-item:hover,
+.navbar-dark .dropdown-item.active {
+    background-color: var(--tao-orange);
+    color: white;
+}
+
+.navbar-dark .dropdown-item:focus {
+    background-color: var(--tao-orange);
+    color: white;
+}
+
 /* Page Header */
 .page-header {
     background: linear-gradient(135deg, #000000 0%, #212529 100%);
