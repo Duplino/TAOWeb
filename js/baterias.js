@@ -149,12 +149,16 @@ function renderTable() {
             <td>${bateria.capacidad}</td>
             <td>${bateria.aplicacion}</td>
             <td class="text-center">
-                <button class="btn btn-sm btn-orange" onclick="showDetails(${index})">
+                <button class="btn btn-sm btn-orange" data-index="${index}">
                     <i class="bi bi-eye me-1"></i>Ver Detalles
                 </button>
             </td>
         `;
         tableBody.appendChild(row);
+        
+        // Add event listener to the button
+        const button = row.querySelector('button');
+        button.addEventListener('click', () => showDetails(index));
     });
 }
 
