@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baterías - TAO Power</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <span class="text-orange">TAO</span> Power
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="baterias.html">Baterías</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cargadores.html">Cargadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">Catálogo de <span class="text-orange">Baterías</span></h1>
+                    <p class="lead">Encuentra la batería perfecta para tus necesidades</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters and Search -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Buscar por modelo...">
+                </div>
+                <div class="col-md-3">
+                    <select id="tipoFilter" class="form-select">
+                        <option value="">Todos los tipos</option>
+                        <option value="Plomo-Ácido">Plomo-Ácido</option>
+                        <option value="AGM">AGM</option>
+                        <option value="Gel">Gel</option>
+                        <option value="Litio">Litio</option>
+                        <option value="Tracción">Tracción</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select id="voltajeFilter" class="form-select">
+                        <option value="">Todos los voltajes</option>
+                        <option value="6V">6V</option>
+                        <option value="12V">12V</option>
+                        <option value="24V">24V</option>
+                        <option value="48V">48V</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button id="clearFilters" class="btn btn-outline-secondary w-100">
+                        <i class="bi bi-x-circle me-1"></i>Limpiar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Table -->
+    <section class="py-5">
+        <div class="container">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0" id="bateriasTable">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Modelo</th>
+                                    <th>Tipo</th>
+                                    <th>Voltaje</th>
+                                    <th>Capacidad (Ah)</th>
+                                    <th>Aplicación</th>
+                                    <th class="text-center">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bateriasTableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="noResults" class="alert alert-info mt-3 d-none">
+                <i class="bi bi-info-circle me-2"></i>No se encontraron resultados para los filtros seleccionados.
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 id="modalModelo" class="fw-bold text-orange mb-3"></h4>
+                            <table class="table table-borderless">
+                                <tr>
+                                    <th>Tipo:</th>
+                                    <td id="modalTipo"></td>
+                                </tr>
+                                <tr>
+                                    <th>Voltaje:</th>
+                                    <td id="modalVoltaje"></td>
+                                </tr>
+                                <tr>
+                                    <th>Capacidad:</th>
+                                    <td id="modalCapacidad"></td>
+                                </tr>
+                                <tr>
+                                    <th>Aplicación:</th>
+                                    <td id="modalAplicacion"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold mb-3">Características</h5>
+                            <ul id="modalCaracteristicas" class="list-unstyled">
+                                <!-- Populated by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="index.html#contacto" class="btn btn-orange">Solicitar Cotización</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 <span class="text-orange fw-bold">TAO Power</span>. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://taopower.com.ar" class="text-white-50 text-decoration-none">www.taopower.com.ar</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/baterias.js"></script>
+</body>
+</html>
