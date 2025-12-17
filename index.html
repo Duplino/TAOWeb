@@ -155,7 +155,7 @@
     <!-- About Us Section -->
     <section id="nosotros" class="py-5 bg-light">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center mb-5">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="display-5 fw-bold mb-4">Sobre <span class="text-orange">Nosotros</span></h2>
                     <p class="lead mb-4">
@@ -198,6 +198,15 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
+                    <div class="image-placeholder rounded shadow">
+                        <i class="bi bi-building"></i>
+                        <p>Imagen de la empresa</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
                     <div class="bg-gradient-orange rounded p-5 text-white">
                         <h3 class="fw-bold mb-4">Nuestra Historia</h3>
                         <p>
@@ -223,15 +232,80 @@
     <!-- Contact Section -->
     <section id="contacto" class="py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="text-center mb-5">
-                        <h2 class="display-5 fw-bold">Contacta con <span class="text-orange">Nosotros</span></h2>
-                        <p class="lead text-muted">Estamos aquí para ayudarte con todas tus necesidades energéticas</p>
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Contacta con <span class="text-orange">Nosotros</span></h2>
+                <p class="lead text-muted">Estamos aquí para ayudarte con todas tus necesidades energéticas</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Contact Information -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold mb-4">Información de <span class="text-orange">Contacto</span></h4>
+                            
+                            <!-- Email -->
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="contact-icon me-3">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Email</h6>
+                                    <a href="mailto:info@taopower.com.ar" class="text-muted text-decoration-none">info@taopower.com.ar</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="contact-icon me-3">
+                                    <i class="bi bi-telephone-fill"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Teléfono</h6>
+                                    <a href="tel:+5491123456789" class="text-muted text-decoration-none">+54 9 11 2345-6789</a>
+                                </div>
+                            </div>
+                            
+                            <!-- WhatsApp -->
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="contact-icon me-3">
+                                    <i class="bi bi-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">WhatsApp</h6>
+                                    <a href="https://wa.me/5491123456789" target="_blank" class="text-muted text-decoration-none">+54 9 11 2345-6789</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Social Media -->
+                            <h6 class="fw-bold mb-3">Síguenos en Redes Sociales</h6>
+                            <div class="d-flex gap-3">
+                                <a href="https://facebook.com/taopower" target="_blank" class="social-icon" aria-label="Facebook">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="https://instagram.com/taopower" target="_blank" class="social-icon" aria-label="Instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="https://linkedin.com/company/taopower" target="_blank" class="social-icon" aria-label="LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
+                            
+                            <!-- WhatsApp Button -->
+                            <a href="https://wa.me/5491123456789?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20sus%20productos" 
+                               target="_blank" 
+                               class="btn btn-whatsapp btn-lg w-100 mt-4">
+                                <i class="bi bi-whatsapp me-2"></i>Chatear por WhatsApp
+                            </a>
+                        </div>
                     </div>
-                    
-                    <div class="card border-0 shadow">
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm h-100">
                         <div class="card-body p-4 p-md-5">
+                            <h4 class="fw-bold mb-4">Envíanos un <span class="text-orange">Mensaje</span></h4>
                             <form id="contactForm">
                                 <div class="row g-3">
                                     <div class="col-md-6">
