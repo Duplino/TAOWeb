@@ -5,7 +5,7 @@
     'use strict';
     
     // Configuration
-    const SNOW_DURATION = 5000; // 5 seconds
+    const SNOW_DURATION = 7000; // 5 seconds
     const SNOWFLAKE_COUNT = 50;
     const SOUND_URL = 'https://taopower.com.ar/assets/hohoho.mp3';
     
@@ -37,13 +37,13 @@
             const fontSize = 10 + Math.random() * 20;
             
             snowflake.style.position = 'absolute';
-            snowflake.style.top = '-20px';
+            snowflake.style.top = '-50px';
             snowflake.style.left = startX + '%';
             snowflake.style.fontSize = fontSize + 'px';
             snowflake.style.color = 'white';
             snowflake.style.opacity = 0.5 + Math.random() * 0.5;
             snowflake.style.textShadow = '0 0 5px rgba(255, 255, 255, 0.8)';
-            snowflake.style.animation = `snowfall-${animationIndex} ${duration}s linear ${delay}s infinite`;
+            snowflake.style.animation = `snowfall-${animationIndex} ${duration}s linear ${delay}s forwards`;
             
             container.appendChild(snowflake);
         }
