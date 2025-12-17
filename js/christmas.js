@@ -22,13 +22,16 @@
         container.style.zIndex = '9999';
         container.style.overflow = 'hidden';
         
+        // Use a limited set of animation variants (5) instead of creating 50 unique ones
+        const animationVariants = 5;
+        
         for (let i = 0; i < SNOWFLAKE_COUNT; i++) {
             const snowflake = document.createElement('div');
             snowflake.className = 'snowflake';
             snowflake.innerHTML = '❄';
             
             const startX = Math.random() * 100;
-            const endX = (Math.random() - 0.5) * 100; // Random horizontal movement
+            const animationIndex = i % animationVariants; // Reuse 5 animation patterns
             const delay = Math.random() * 2;
             const duration = 3 + Math.random() * 2;
             const fontSize = 10 + Math.random() * 20;
@@ -40,26 +43,7 @@
             snowflake.style.color = 'white';
             snowflake.style.opacity = String(0.5 + Math.random() * 0.5);
             snowflake.style.textShadow = '0 0 5px rgba(255, 255, 255, 0.8)';
-            snowflake.style.setProperty('--end-x', endX + 'px');
-            snowflake.style.animation = `snowfall-${i} ${duration}s linear ${delay}s infinite`;
-            
-            // Create unique keyframe animation for this snowflake
-            const styleSheet = document.getElementById('snowfall-css');
-            if (styleSheet && styleSheet.sheet) {
-                const keyframes = `
-                    @keyframes snowfall-${i} {
-                        0% {
-                            top: -20px;
-                            transform: translateX(0) rotate(0deg);
-                        }
-                        100% {
-                            top: 100vh;
-                            transform: translateX(${endX}px) rotate(360deg);
-                        }
-                    }
-                `;
-                styleSheet.sheet.insertRule(keyframes, styleSheet.sheet.cssRules.length);
-            }
+            snowflake.style.animation = `snowfall-${animationIndex} ${duration}s linear ${delay}s infinite`;
             
             container.appendChild(snowflake);
         }
@@ -104,6 +88,29 @@
         if (!document.getElementById('snowfall-css')) {
             const style = document.createElement('style');
             style.id = 'snowfall-css';
+            // Create 5 different snowfall animation patterns for variety
+            style.textContent = `
+                @keyframes snowfall-0 {
+                    0% { top: -20px; transform: translateX(0) rotate(0deg); }
+                    100% { top: 100vh; transform: translateX(30px) rotate(360deg); }
+                }
+                @keyframes snowfall-1 {
+                    0% { top: -20px; transform: translateX(0) rotate(0deg); }
+                    100% { top: 100vh; transform: translateX(-30px) rotate(-360deg); }
+                }
+                @keyframes snowfall-2 {
+                    0% { top: -20px; transform: translateX(0) rotate(0deg); }
+                    100% { top: 100vh; transform: translateX(50px) rotate(360deg); }
+                }
+                @keyframes snowfall-3 {
+                    0% { top: -20px; transform: translateX(0) rotate(0deg); }
+                    100% { top: 100vh; transform: translateX(-50px) rotate(-360deg); }
+                }
+                @keyframes snowfall-4 {
+                    0% { top: -20px; transform: translateX(0) rotate(0deg); }
+                    100% { top: 100vh; transform: translateX(0) rotate(360deg); }
+                }
+            `;
             document.head.appendChild(style);
         }
     }
