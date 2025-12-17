@@ -258,3 +258,110 @@ html {
     border-color: var(--tao-orange);
     color: #8b3a00;
 }
+
+/* Contact Icons */
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--tao-orange) 0%, var(--tao-orange-hover) 100%);
+    border-radius: 10px;
+    color: white;
+    font-size: 1.25rem;
+}
+
+/* Social Icons */
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    color: var(--tao-black);
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: linear-gradient(135deg, var(--tao-orange) 0%, var(--tao-orange-hover) 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+}
+
+/* WhatsApp Button */
+.btn-whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    border: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+/* Image Placeholders */
+.image-placeholder {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px dashed #dee2e6;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    transition: all 0.3s ease;
+}
+
+.image-placeholder:hover {
+    border-color: var(--tao-orange);
+    background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+}
+
+.image-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.image-placeholder p {
+    margin: 0;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+/* Product Image Placeholders */
+.product-image-placeholder {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px dashed #dee2e6;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    border-radius: 8px;
+}
+
+.product-image-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+}
+
+.product-image-placeholder p {
+    margin: 0;
+    font-size: 0.875rem;
+    opacity: 0.7;
+}
