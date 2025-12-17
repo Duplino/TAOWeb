@@ -80,15 +80,17 @@
     
     // Function to initialize Christmas logo
     function initChristmasLogo() {
-        const logo = document.querySelector('.navbar-brand img');
+        const logo = document.getElementById('navbar-logo');
         if (logo) {
             // Change to Christmas logo
             logo.src = 'https://taopower.com.ar/assets/images/logo-blanco-122x86(navidad).png';
             
             // Make logo clickable for Christmas
-            logo.style.cursor = 'pointer';
-            logo.parentElement.style.cursor = 'pointer';
-            logo.parentElement.addEventListener('click', handleLogoClick);
+            const logoLink = document.getElementById('logo-link');
+            if (logoLink) {
+                logoLink.style.cursor = 'pointer';
+                logoLink.addEventListener('click', handleLogoClick);
+            }
         }
     }
     
