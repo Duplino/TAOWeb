@@ -41,7 +41,7 @@
             snowflake.style.left = startX + '%';
             snowflake.style.fontSize = fontSize + 'px';
             snowflake.style.color = 'white';
-            snowflake.style.opacity = String(0.5 + Math.random() * 0.5);
+            snowflake.style.opacity = 0.5 + Math.random() * 0.5;
             snowflake.style.textShadow = '0 0 5px rgba(255, 255, 255, 0.8)';
             snowflake.style.animation = `snowfall-${animationIndex} ${duration}s linear ${delay}s infinite`;
             
@@ -56,11 +56,17 @@
         }, SNOW_DURATION);
     }
     
+    // Audio instance for ho-ho-ho sound
+    let audioInstance = null;
+    
     // Function to play sound
     function playSound() {
-        const audio = new Audio(SOUND_URL);
-        audio.volume = 0.5;
-        audio.play().catch(err => {
+        if (!audioInstance) {
+            audioInstance = new Audio(SOUND_URL);
+            audioInstance.volume = 0.5;
+        }
+        audioInstance.currentTime = 0;
+        audioInstance.play().catch(err => {
             console.log('Audio playback failed:', err);
         });
     }
