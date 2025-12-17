@@ -13,16 +13,14 @@
     function createSnowEffect() {
         const container = document.createElement('div');
         container.id = 'snow-container';
-        container.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            overflow: hidden;
-        `;
+        container.style.position = 'fixed';
+        container.style.top = '0';
+        container.style.left = '0';
+        container.style.width = '100%';
+        container.style.height = '100%';
+        container.style.pointerEvents = 'none';
+        container.style.zIndex = '9999';
+        container.style.overflow = 'hidden';
         
         for (let i = 0; i < SNOWFLAKE_COUNT; i++) {
             const snowflake = document.createElement('div');
@@ -30,20 +28,38 @@
             snowflake.innerHTML = '❄';
             
             const startX = Math.random() * 100;
+            const endX = (Math.random() - 0.5) * 100; // Random horizontal movement
             const delay = Math.random() * 2;
             const duration = 3 + Math.random() * 2;
             const fontSize = 10 + Math.random() * 20;
             
-            snowflake.style.cssText = `
-                position: absolute;
-                top: -20px;
-                left: ${startX}%;
-                font-size: ${fontSize}px;
-                color: white;
-                opacity: ${0.5 + Math.random() * 0.5};
-                animation: snowfall ${duration}s linear ${delay}s infinite;
-                text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-            `;
+            snowflake.style.position = 'absolute';
+            snowflake.style.top = '-20px';
+            snowflake.style.left = startX + '%';
+            snowflake.style.fontSize = fontSize + 'px';
+            snowflake.style.color = 'white';
+            snowflake.style.opacity = String(0.5 + Math.random() * 0.5);
+            snowflake.style.textShadow = '0 0 5px rgba(255, 255, 255, 0.8)';
+            snowflake.style.setProperty('--end-x', endX + 'px');
+            snowflake.style.animation = `snowfall-${i} ${duration}s linear ${delay}s infinite`;
+            
+            // Create unique keyframe animation for this snowflake
+            const styleSheet = document.getElementById('snowfall-css');
+            if (styleSheet && styleSheet.sheet) {
+                const keyframes = `
+                    @keyframes snowfall-${i} {
+                        0% {
+                            top: -20px;
+                            transform: translateX(0) rotate(0deg);
+                        }
+                        100% {
+                            top: 100vh;
+                            transform: translateX(${endX}px) rotate(360deg);
+                        }
+                    }
+                `;
+                styleSheet.sheet.insertRule(keyframes, styleSheet.sheet.cssRules.length);
+            }
             
             container.appendChild(snowflake);
         }
@@ -88,18 +104,6 @@
         if (!document.getElementById('snowfall-css')) {
             const style = document.createElement('style');
             style.id = 'snowfall-css';
-            style.textContent = `
-                @keyframes snowfall {
-                    0% {
-                        top: -20px;
-                        transform: translateX(0) rotate(0deg);
-                    }
-                    100% {
-                        top: 100vh;
-                        transform: translateX(${Math.random() > 0.5 ? '' : '-'}50px) rotate(360deg);
-                    }
-                }
-            `;
             document.head.appendChild(style);
         }
     }
