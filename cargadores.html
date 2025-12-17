@@ -16,8 +16,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <span class="text-orange">TAO</span> Power
+            <a class="navbar-brand fw-bold" href="index.html" id="logo-link">
+                <img src="https://taopower.com.ar/assets/images/logo-blanco-122x86.png" alt="TAO Power" height="43" id="navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -208,5 +208,33 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/cargadores.js"></script>
+    
+    <!-- Christmas Mode Configuration -->
+    <script>
+        // Set christmas to true to enable Christmas logo and effects
+        const christmas = false;
+        
+        if (christmas) {
+            // Change logo to Christmas version
+            const logo = document.getElementById('navbar-logo');
+            if (logo) {
+                logo.src = 'https://taopower.com.ar/assets/images/logo-blanco-122x86(navidad).png';
+            }
+            
+            // Load Christmas functionality
+            const script = document.createElement('script');
+            script.src = 'js/christmas.js';
+            document.body.appendChild(script);
+        } else {
+            // Disable click on regular logo
+            const logoLink = document.getElementById('logo-link');
+            if (logoLink) {
+                logoLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                });
+                logoLink.style.cursor = 'default';
+            }
+        }
+    </script>
 </body>
 </html>
