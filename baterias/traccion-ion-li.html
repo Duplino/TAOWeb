@@ -239,24 +239,13 @@
     <!-- Custom JS -->
     <script src="../js/battery-category.js"></script>
     
-    <!-- Christmas Mode Configuration -->
+    <!-- Christmas Mode: Uncomment the line below to enable Christmas logo and snow effects -->
+    <!-- <script src="../js/christmas.js"></script> -->
+    
+    <!-- Disable logo click when Christmas mode is off -->
     <script>
-        // Set christmas to true to enable Christmas logo and effects
-        const christmas = false;
-        
-        if (christmas) {
-            // Change logo to Christmas version
-            const logo = document.getElementById('navbar-logo');
-            if (logo) {
-                logo.src = 'https://taopower.com.ar/assets/images/logo-blanco-122x86(navidad).png';
-            }
-            
-            // Load Christmas functionality
-            const script = document.createElement('script');
-            script.src = '../js/christmas.js';
-            document.body.appendChild(script);
-        } else {
-            // Disable click on regular logo
+        // Only disable click if Christmas mode is not active
+        if (!document.querySelector('script[src*="christmas.js"]')) {
             const logoLink = document.getElementById('logo-link');
             if (logoLink) {
                 logoLink.addEventListener('click', function(e) {
