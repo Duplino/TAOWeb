@@ -47,6 +47,12 @@ function createProductCard(product) {
     const col = document.createElement('div');
     col.className = 'col-md-4';
     
+    // Create URL-safe slug from model name
+    const urlSlug = product.modelo.toLowerCase()
+        .replace(/[^a-z0-9-]/g, '-')  // Replace special chars with dash
+        .replace(/-+/g, '-')           // Collapse multiple dashes
+        .replace(/^-+|-+$/g, '');      // Trim leading/trailing dashes
+    
     // Create card HTML
     col.innerHTML = `
         <div class="card h-100 border-0 shadow-sm product-card">
@@ -78,7 +84,7 @@ function createProductCard(product) {
                     </div>
                     
                     <!-- Action Button -->
-                    <a href="producto-${product.modelo.toLowerCase()}.html" class="btn btn-orange w-100">
+                    <a href="producto-${urlSlug}.html" class="btn btn-orange w-100">
                         <i class="bi bi-eye me-2"></i>Ver Detalles
                     </a>
                 </div>
