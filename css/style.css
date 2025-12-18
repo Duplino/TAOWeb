@@ -170,6 +170,7 @@ body {
 /* Mega Menu Styles */
 .dropdown-menu.mega-menu {
     width: 800px;
+    max-width: 90vw;
     padding: 1.5rem;
 }
 
@@ -200,6 +201,19 @@ body {
     
     .mega-menu-column {
         padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mega-menu-column h6 {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.4rem;
+    }
+    
+    .mega-menu-column .dropdown-item {
+        padding: 0.4rem 0;
+        font-size: 0.8rem;
     }
 }
 
