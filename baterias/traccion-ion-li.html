@@ -68,157 +68,186 @@
         </div>
     </section>
 
-    <!-- Product Description -->
+    <!-- Product Cards Section (Mercado Libre Style) -->
     <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <div class="row align-items-center mb-4">
-                        <div class="col-md-4 mb-3 mb-md-0">
-                            <div class="image-placeholder rounded shadow">
-                                <i class="bi bi-lightning-charge"></i>
-                                <p>Batería Ion-Li</p>
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <h2 class="h3 fw-bold mb-4">Descripción del Producto</h2>
-                                    <p class="lead text-muted mb-0">
-                                        Las baterías de tracción de iones de litio representan la última tecnología en almacenamiento 
-                                        de energía para equipos industriales. Ofrecen mayor eficiencia, carga rápida y vida útil 
-                                        extendida comparadas con las tecnologías tradicionales.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body p-4 p-md-5">
-                            <div class="row g-4">
-                                <div class="col-md-6">
-                                    <h5 class="fw-bold mb-3"><i class="bi bi-check-circle-fill text-orange me-2"></i>Características Principales</h5>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>Carga rápida en 1-2 horas</li>
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>Sin mantenimiento requerido</li>
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>Mayor densidad energética</li>
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>Peso 70% menor que Pb Ac</li>
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>BMS inteligente integrado</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-6">
-                                    <h5 class="fw-bold mb-3"><i class="bi bi-tools text-orange me-2"></i>Aplicaciones Típicas</h5>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>Montacargas eléctricos modernos</li>
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>AGVs (Vehículos guiados automáticos)</li>
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>Transpaletas y apiladores eléctricos</li>
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>Plataformas elevadoras</li>
-                                        <li class="mb-2"><i class="bi bi-arrow-right-circle text-orange me-2"></i>Equipos en operación 24/7</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Warranty Information -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body p-4 p-md-5">
-                            <h2 class="h3 fw-bold mb-4"><i class="bi bi-shield-check text-orange me-2"></i>Información de Garantía</h2>
-                            <div class="alert alert-orange mb-4">
-                                <i class="bi bi-info-circle me-2"></i>
-                                <strong>Garantía premium:</strong> Nuestras baterías Ion Li cuentan con garantía extendida y soporte técnico especializado.
-                            </div>
-                            <div class="row g-4">
-                                <div class="col-md-4">
-                                    <div class="text-center p-3 bg-light rounded">
-                                        <i class="bi bi-calendar-check fs-1 text-orange mb-2"></i>
-                                        <h5 class="fw-bold">36 Meses</h5>
-                                        <p class="mb-0 small text-muted">Garantía completa del fabricante</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="text-center p-3 bg-light rounded">
-                                        <i class="bi bi-arrow-repeat fs-1 text-orange mb-2"></i>
-                                        <h5 class="fw-bold">3500+ Ciclos</h5>
-                                        <p class="mb-0 small text-muted">Vida útil esperada al 80% capacidad</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="text-center p-3 bg-light rounded">
-                                        <i class="bi bi-headset fs-1 text-orange mb-2"></i>
-                                        <h5 class="fw-bold">Soporte 24/7</h5>
-                                        <p class="mb-0 small text-muted">Monitoreo remoto disponible</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <h5 class="fw-bold mb-3">Condiciones de Garantía:</h5>
-                                <ul class="text-muted">
-                                    <li>BMS debe permanecer conectado en todo momento</li>
-                                    <li>Uso de cargadores certificados para Ion Li</li>
-                                    <li>Temperatura de operación dentro de rango especificado (-10°C a 45°C)</li>
-                                    <li>Registro y activación del producto requeridos</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <h2 class="h3 fw-bold mb-4 text-center">Modelos Destacados</h2>
+                    <div class="row g-4" id="productCardsContainer">
+                        <!-- Cards will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Models Table -->
+    <!-- Specifications Section -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="h3 fw-bold mb-4 text-center">Modelos Disponibles</h2>
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-0">
-                            <div class="table-responsive">
-                                <table class="table table-hover mb-0" id="modelosTable">
-                                    <thead class="table-dark">
-                                        <tr id="tableHeader">
-                                            <!-- Headers will be populated by JavaScript -->
-                                        </tr>
-                                    </thead>
-                                    <tbody id="modelosTableBody">
-                                        <!-- Data will be populated by JavaScript -->
-                                    </tbody>
-                                </table>
+                    <h2 class="h3 fw-bold mb-5 text-center">Especificaciones Técnicas de Ion Li</h2>
+                    <div class="row g-4 text-center">
+                        <div class="col-md-3 col-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <i class="bi bi-shield-check display-4 text-orange mb-3"></i>
+                                    <h3 class="h1 fw-bold text-orange mb-2">5 Años</h3>
+                                    <p class="mb-0 text-muted">Garantía</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="noResults" class="alert alert-info mt-3 d-none">
-                        <i class="bi bi-info-circle me-2"></i>No hay modelos disponibles en este momento.
+                        <div class="col-md-3 col-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <i class="bi bi-arrow-repeat display-4 text-orange mb-3"></i>
+                                    <h3 class="h1 fw-bold text-orange mb-2">3500+</h3>
+                                    <p class="mb-0 text-muted">Ciclos de Vida</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <i class="bi bi-thermometer-half display-4 text-orange mb-3"></i>
+                                    <h3 class="h4 fw-bold text-orange mb-2">-20° a 60°</h3>
+                                    <p class="mb-0 text-muted">Rango de Trabajo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <i class="bi bi-droplet display-4 text-orange mb-3"></i>
+                                    <h3 class="h1 fw-bold text-orange mb-2">IP54</h3>
+                                    <p class="mb-0 text-muted">Clasificación</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Detail Modal -->
-    <div class="modal fade" id="productModal" tabindex="-1">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header bg-dark text-white">
-                    <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body" id="modalBodyContent">
-                    <!-- Content will be populated by JavaScript -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-orange" id="downloadPdfBtn">
-                        <i class="bi bi-file-pdf me-2"></i>Descargar Ficha Técnica
-                    </button>
-                    <a href="../index.html#contacto" class="btn btn-orange">Solicitar Cotización</a>
+    <!-- Why Choose TAO POWER -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="h3 fw-bold mb-5 text-center">¿Por qué elegir la batería de tracción TAO POWER?</h2>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0">
+                                            <i class="bi bi-lightning-charge-fill display-5 text-orange"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h5 class="fw-bold mb-2">Alta Eficiencia Energética</h5>
+                                            <p class="mb-0 text-muted">Mayor densidad energética que las baterías tradicionales, permitiendo más autonomía en menos peso y espacio.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0">
+                                            <i class="bi bi-clock-history display-5 text-orange"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h5 class="fw-bold mb-2">Carga Rápida</h5>
+                                            <p class="mb-0 text-muted">Tecnología de carga rápida que permite recargar completamente en 1-2 horas, maximizando la productividad.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0">
+                                            <i class="bi bi-tools display-5 text-orange"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h5 class="fw-bold mb-2">Libre de Mantenimiento</h5>
+                                            <p class="mb-0 text-muted">Sin necesidad de riego de agua ni mantenimiento periódico, reduciendo costos operativos y tiempo de inactividad.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-start">
+                                        <div class="flex-shrink-0">
+                                            <i class="bi bi-graph-up-arrow display-5 text-orange"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h5 class="fw-bold mb-2">Mayor Vida Útil</h5>
+                                            <p class="mb-0 text-muted">Más de 3500 ciclos de carga garantizados, superando ampliamente la vida útil de las baterías de plomo-ácido.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Brand Partners -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="h3 fw-bold mb-5 text-center">Socio de Marcas</h2>
+                    <div class="row g-4 align-items-center justify-content-center">
+                        <div class="col-md-3 col-6 text-center">
+                            <div class="card border-0 shadow-sm p-3">
+                                <div class="brand-placeholder">
+                                    <i class="bi bi-building"></i>
+                                    <p>Marca 1</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 text-center">
+                            <div class="card border-0 shadow-sm p-3">
+                                <div class="brand-placeholder">
+                                    <i class="bi bi-building"></i>
+                                    <p>Marca 2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 text-center">
+                            <div class="card border-0 shadow-sm p-3">
+                                <div class="brand-placeholder">
+                                    <i class="bi bi-building"></i>
+                                    <p>Marca 3</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 text-center">
+                            <div class="card border-0 shadow-sm p-3">
+                                <div class="brand-placeholder">
+                                    <i class="bi bi-building"></i>
+                                    <p>Marca 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white py-4">
@@ -237,7 +266,7 @@
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="../js/battery-category.js"></script>
+    <script src="../js/traccion-ion-li.js"></script>
     
     <!-- Christmas Mode: Uncomment the line below to enable Christmas logo and snow effects -->
     <!-- <script src="../js/christmas.js"></script> -->
