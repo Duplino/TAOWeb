@@ -179,16 +179,18 @@ body {
         left: 0 !important;
         right: 0 !important;
         width: 100vw !important;
-        transform: none !important;
         margin: 0 !important;
         opacity: 0;
-        transform: translateY(-10px) !important;
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        visibility: hidden;
+        transform: translateY(-20px) !important;
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
         pointer-events: none;
+        display: block !important;
     }
     
     .dropdown-menu.mega-menu.show {
         opacity: 1;
+        visibility: visible;
         transform: translateY(0) !important;
         pointer-events: auto;
     }
@@ -196,6 +198,7 @@ body {
     /* Animation for dropdown on hover */
     .dropdown:hover > .dropdown-menu.mega-menu {
         opacity: 1;
+        visibility: visible;
         transform: translateY(0) !important;
         pointer-events: auto;
     }
