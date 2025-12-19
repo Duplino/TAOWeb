@@ -1,5 +1,9 @@
 // Main JavaScript for TAO Power Website
 
+// Constants
+const MOBILE_BREAKPOINT = 992; // Matches Bootstrap's lg breakpoint
+const CLOSE_BUTTON_AREA_SIZE = 56; // 40px button + 1rem (16px) margin
+
 // Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu close button handler
@@ -15,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const clickY = e.clientY - rect.top;
             
             // Close button is at top-right (40x40px, 1rem margin)
-            if (clickX > rect.width - 56 && clickY < 56 && window.innerWidth < 992) {
+            if (clickX > rect.width - CLOSE_BUTTON_AREA_SIZE && clickY < CLOSE_BUTTON_AREA_SIZE && window.innerWidth < MOBILE_BREAKPOINT) {
                 const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, {toggle: false});
                 bsCollapse.hide();
             }
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close menu when clicking on nav links (for better UX)
         navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
             link.addEventListener('click', function() {
-                if (window.innerWidth < 992) {
+                if (window.innerWidth < MOBILE_BREAKPOINT) {
                     const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, {toggle: false});
                     bsCollapse.hide();
                 }
