@@ -2,6 +2,36 @@
 
 // Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu close button handler
+    const navbarCollapse = document.getElementById('navbarNav');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    
+    if (navbarCollapse && navbarToggler) {
+        // Close menu when clicking the close button (::before pseudo-element area)
+        navbarCollapse.addEventListener('click', function(e) {
+            // Check if clicked in the top-right area where close button is
+            const rect = navbarCollapse.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const clickY = e.clientY - rect.top;
+            
+            // Close button is at top-right (40x40px, 1rem margin)
+            if (clickX > rect.width - 56 && clickY < 56 && window.innerWidth < 992) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, {toggle: false});
+                bsCollapse.hide();
+            }
+        });
+        
+        // Close menu when clicking on nav links (for better UX)
+        navbarCollapse.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 992) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, {toggle: false});
+                    bsCollapse.hide();
+                }
+            });
+        });
+    }
+    
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
