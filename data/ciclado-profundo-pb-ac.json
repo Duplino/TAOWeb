@@ -1,4 +1,6 @@
 {
+  "category": "ciclado",
+  "type": "pb-ac",
   "columns": [
     { "key": "modelo", "label": "Modelo" },
     { "key": "tipo", "label": "Tipo" },
@@ -15,6 +17,19 @@
       "capacidad": "100Ah",
       "ciclos": "800 (50% DOD)",
       "aplicacion": "Solar, RV, Náutica",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=DC-AGM-12V-100AH"
+      ],
+      "specifications": {
+        "Tipo": "AGM Sealed",
+        "Voltaje Nominal": "12V",
+        "Capacidad (C20)": "100Ah",
+        "Ciclos de Vida": "800 ciclos @ 50% DOD",
+        "Temperatura de Operación": "-20°C a 50°C",
+        "Aplicación": "Solar, RV, Náutica",
+        "Autodescarga": "< 3% por mes",
+        "Vida Útil": "5-8 años"
+      },
       "caracteristicas": [
         "Tecnología AGM sellada",
         "Libre de mantenimiento",
@@ -31,6 +46,19 @@
       "capacidad": "200Ah",
       "ciclos": "1200 (50% DOD)",
       "aplicacion": "Solar off-grid, Telecomunicaciones",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=DC-GEL-12V-200AH"
+      ],
+      "specifications": {
+        "Tipo": "Gel VRLA",
+        "Voltaje Nominal": "12V",
+        "Capacidad (C20)": "200Ah",
+        "Ciclos de Vida": "1200 ciclos @ 50% DOD",
+        "Temperatura de Operación": "-20°C a 55°C",
+        "Aplicación": "Solar off-grid, Telecomunicaciones",
+        "Autodescarga": "< 2% por mes",
+        "Vida Útil": "10-12 años"
+      },
       "caracteristicas": [
         "Electrolito en gel",
         "Mayor vida útil que AGM",
@@ -47,6 +75,19 @@
       "capacidad": "225Ah",
       "ciclos": "900 (50% DOD)",
       "aplicacion": "Carritos de golf, RV",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=DC-AGM-6V-225AH"
+      ],
+      "specifications": {
+        "Tipo": "AGM Sealed",
+        "Voltaje Nominal": "6V",
+        "Capacidad (C20)": "225Ah",
+        "Ciclos de Vida": "900 ciclos @ 50% DOD",
+        "Temperatura de Operación": "-20°C a 50°C",
+        "Aplicación": "Carritos de golf, RV",
+        "Autodescarga": "< 3% por mes",
+        "Vida Útil": "6-9 años"
+      },
       "caracteristicas": [
         "Diseño para uso en serie",
         "Alta corriente de descarga",
@@ -63,6 +104,19 @@
       "capacidad": "150Ah",
       "ciclos": "1500 (30% DOD)",
       "aplicacion": "Sistemas solares, Embarcaciones",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=DC-GEL-12V-150AH"
+      ],
+      "specifications": {
+        "Tipo": "Gel VRLA",
+        "Voltaje Nominal": "12V",
+        "Capacidad (C20)": "150Ah",
+        "Ciclos de Vida": "1500 ciclos @ 30% DOD",
+        "Temperatura de Operación": "-20°C a 55°C",
+        "Aplicación": "Sistemas solares, Embarcaciones",
+        "Vida Flotante": "12+ años",
+        "Certificaciones": "ISO, CE"
+      },
       "caracteristicas": [
         "Tecnología VRLA avanzada",
         "Máxima profundidad de descarga",
@@ -79,6 +133,19 @@
       "capacidad": "75Ah",
       "ciclos": "700 (50% DOD)",
       "aplicacion": "Solar pequeña escala, UPS",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=DC-AGM-12V-75AH"
+      ],
+      "specifications": {
+        "Tipo": "AGM Sealed",
+        "Voltaje Nominal": "12V",
+        "Capacidad (C20)": "75Ah",
+        "Ciclos de Vida": "700 ciclos @ 50% DOD",
+        "Temperatura de Operación": "-20°C a 50°C",
+        "Aplicación": "Solar pequeña escala, UPS",
+        "Autodescarga": "< 3% por mes",
+        "Vida Útil": "5-7 años"
+      },
       "caracteristicas": [
         "Compacta y eficiente",
         "Diseño de alta densidad",

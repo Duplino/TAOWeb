@@ -1,4 +1,6 @@
 {
+  "category": "estacionaria",
+  "type": "ion-li",
   "columns": [
     { "key": "modelo", "label": "Modelo" },
     { "key": "voltaje", "label": "Voltaje" },
@@ -15,6 +17,22 @@
       "energia": "4.8",
       "peso": "52",
       "aplicacion": "UPS, Telecomunicaciones",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=LI-EST-48V-100AH"
+      ],
+      "specifications": {
+        "Tipo": "LiFePO4 (LFP)",
+        "Voltaje Nominal": "48V (51.2V)",
+        "Capacidad": "100Ah",
+        "Energía": "4.8 kWh",
+        "Peso": "52 kg",
+        "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+        "Temperatura de Operación": "-10°C a 45°C",
+        "Aplicación": "UPS, Telecomunicaciones",
+        "Rack Mount": "19\" compatible",
+        "Comunicación": "RS485/CAN",
+        "Certificaciones": "UL, CE, UN38.3"
+      },
       "caracteristicas": [
         "Tecnología LiFePO4 (LFP)",
         "Rack mount 19\" compatible",
@@ -32,6 +50,22 @@
       "energia": "9.6",
       "peso": "95",
       "aplicacion": "Data Centers, UPS críticos",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=LI-EST-48V-200AH"
+      ],
+      "specifications": {
+        "Tipo": "LiFePO4 (LFP)",
+        "Voltaje Nominal": "48V (51.2V)",
+        "Capacidad": "200Ah",
+        "Energía": "9.6 kWh",
+        "Peso": "95 kg",
+        "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+        "Temperatura de Operación": "-10°C a 45°C",
+        "Aplicación": "Data Centers, UPS críticos",
+        "Paralelización": "Hasta 16 unidades",
+        "Garantía": "10 años",
+        "Comunicación": "WiFi/4G, SNMP"
+      },
       "caracteristicas": [
         "Alta densidad energética",
         "Sistema de enfriamiento pasivo",
@@ -49,6 +83,21 @@
       "energia": "57.6",
       "peso": "480",
       "aplicacion": "Almacenamiento solar comercial",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=LI-EST-384V-150AH"
+      ],
+      "specifications": {
+        "Tipo": "LiFePO4 (LFP)",
+        "Voltaje Nominal": "384V",
+        "Capacidad": "150Ah",
+        "Energía": "57.6 kWh",
+        "Peso": "480 kg",
+        "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+        "Temperatura de Operación": "-10°C a 45°C",
+        "Aplicación": "Almacenamiento solar comercial",
+        "Inversor": "Híbrido compatible",
+        "Modo Isla": "Integrado"
+      },
       "caracteristicas": [
         "Sistema de alta tensión",
         "Inversor híbrido compatible",
@@ -66,6 +115,21 @@
       "energia": "14.3",
       "peso": "135",
       "aplicacion": "Microgrids, ESS industrial",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=LI-EST-51.2V-280AH"
+      ],
+      "specifications": {
+        "Tipo": "LiFePO4 (LFP)",
+        "Voltaje Nominal": "51.2V",
+        "Capacidad": "280Ah",
+        "Energía": "14.3 kWh",
+        "Peso": "135 kg",
+        "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+        "Temperatura de Operación": "-20°C a 55°C",
+        "Aplicación": "Microgrids, ESS industrial",
+        "Protección": "IP65",
+        "Escalabilidad": "Hasta 1 MWh"
+      },
       "caracteristicas": [
         "Diseño de gabinete outdoor",
         "Protección IP65",
@@ -83,6 +147,21 @@
       "energia": "2.4",
       "peso": "28",
       "aplicacion": "Telecom, Small UPS",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=LI-EST-48V-50AH"
+      ],
+      "specifications": {
+        "Tipo": "LiFePO4 (LFP)",
+        "Voltaje Nominal": "48V (51.2V)",
+        "Capacidad": "50Ah",
+        "Energía": "2.4 kWh",
+        "Peso": "28 kg",
+        "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+        "Temperatura de Operación": "-10°C a 45°C",
+        "Aplicación": "Telecom, Small UPS",
+        "Display": "LCD integrado",
+        "Bluetooth": "Sí"
+      },
       "caracteristicas": [
         "Ultra compacto y ligero",
         "Instalación plug-and-play",

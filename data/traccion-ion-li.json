@@ -1,4 +1,6 @@
 {
+  "category": "traccion",
+  "type": "ion-li",
   "columns": [
     { "key": "modelo", "label": "Modelo" },
     { "key": "voltaje", "label": "Voltaje" },
@@ -15,6 +17,22 @@
       "peso": "66",
       "energia": "4.8",
       "aplicacion": "Transpaletas eléctricas",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-24V-200AH",
+        "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-24V-200AH-Side"
+      ],
+      "specifications": {
+        "Tipo": "LiFePO4",
+        "Voltaje Nominal": "24V (25.6V)",
+        "Capacidad": "200Ah",
+        "Peso": "66 kg",
+        "Energía": "4.8 kWh",
+        "Ciclos de Vida": "3500+ ciclos @ 80% DOD",
+        "Temperatura de Operación": "-10°C a 45°C",
+        "Aplicación": "Transpaletas eléctricas",
+        "BMS": "Protección múltiple integrada",
+        "Comunicación": "CAN bus"
+      },
       "caracteristicas": [
         "BMS con protección múltiple",
         "Carga rápida en 1.5 horas",
@@ -31,6 +49,21 @@
       "peso": "180",
       "energia": "14.4",
       "aplicacion": "Montacargas medianos",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-48V-300AH"
+      ],
+      "specifications": {
+        "Tipo": "LiFePO4",
+        "Voltaje Nominal": "48V (51.2V)",
+        "Capacidad": "300Ah",
+        "Peso": "180 kg",
+        "Energía": "14.4 kWh",
+        "Ciclos de Vida": "4000+ ciclos @ 80% DOD",
+        "Temperatura de Operación": "-10°C a 45°C",
+        "Aplicación": "Montacargas medianos",
+        "BMS": "BMS inteligente con IoT",
+        "Comunicación": "CAN bus, RS485"
+      },
       "caracteristicas": [
         "Tecnología LiFePO4",
         "Sin efecto memoria",
@@ -47,6 +80,21 @@
       "peso": "420",
       "energia": "36",
       "aplicacion": "Montacargas pesados",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-80V-450AH"
+      ],
+      "specifications": {
+        "Tipo": "LiFePO4",
+        "Voltaje Nominal": "80V (83.2V)",
+        "Capacidad": "450Ah",
+        "Peso": "420 kg",
+        "Energía": "36 kWh",
+        "Ciclos de Vida": "5000+ ciclos @ 80% DOD",
+        "Temperatura de Operación": "-20°C a 55°C",
+        "Aplicación": "Montacargas pesados",
+        "BMS": "BMS avanzado con enfriamiento activo",
+        "Garantía": "5 años"
+      },
       "caracteristicas": [
         "Máxima potencia y rendimiento",
         "Sistema de enfriamiento activo",
@@ -63,6 +111,21 @@
       "peso": "320",
       "energia": "26.9",
       "aplicacion": "AGVs y robots móviles",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-48V-560AH"
+      ],
+      "specifications": {
+        "Tipo": "LiFePO4",
+        "Voltaje Nominal": "48V (51.2V)",
+        "Capacidad": "560Ah",
+        "Peso": "320 kg",
+        "Energía": "26.9 kWh",
+        "Ciclos de Vida": "4000+ ciclos @ 80% DOD",
+        "Temperatura de Operación": "-10°C a 45°C",
+        "Aplicación": "AGVs y robots móviles",
+        "Certificaciones": "UL, CE",
+        "Comunicación": "CAN bus, RS485, WiFi"
+      },
       "caracteristicas": [
         "Diseño modular escalable",
         "Alta densidad energética",

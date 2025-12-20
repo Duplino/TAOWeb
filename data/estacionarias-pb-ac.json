@@ -1,4 +1,6 @@
 {
+  "category": "estacionaria",
+  "type": "pb-ac",
   "columns": [
     { "key": "modelo", "label": "Modelo" },
     { "key": "tipo", "label": "Tipo" },
@@ -15,6 +17,19 @@
       "capacidad": "100Ah",
       "vidaFlotante": "10",
       "aplicacion": "UPS, Telecomunicaciones",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=EST-AGM-12V-100AH"
+      ],
+      "specifications": {
+        "Tipo": "VRLA AGM",
+        "Voltaje Nominal": "12V",
+        "Capacidad (C10)": "100Ah",
+        "Vida Flotante": "10 años @ 25°C",
+        "Temperatura de Operación": "-20°C a 50°C",
+        "Aplicación": "UPS, Telecomunicaciones",
+        "Autodescarga": "< 2% por mes",
+        "Certificaciones": "ISO 9001"
+      },
       "caracteristicas": [
         "Tecnología VRLA AGM",
         "Muy baja tasa de autodescarga",
@@ -31,6 +46,19 @@
       "capacidad": "200Ah",
       "vidaFlotante": "15",
       "aplicacion": "Telecomunicaciones, Data Centers",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=EST-GEL-12V-200AH"
+      ],
+      "specifications": {
+        "Tipo": "Gel VRLA",
+        "Voltaje Nominal": "12V",
+        "Capacidad (C10)": "200Ah",
+        "Vida Flotante": "15 años @ 25°C",
+        "Temperatura de Operación": "-20°C a 55°C",
+        "Aplicación": "Telecomunicaciones, Data Centers",
+        "Terminal": "Frontal",
+        "Certificaciones": "ISO, CE, UL"
+      },
       "caracteristicas": [
         "Larga vida útil en flotación",
         "Tecnología Gel avanzada",
@@ -47,6 +75,19 @@
       "capacidad": "1000Ah",
       "vidaFlotante": "12",
       "aplicacion": "Bancos de baterías grandes",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=EST-AGM-2V-1000AH"
+      ],
+      "specifications": {
+        "Tipo": "VRLA AGM",
+        "Voltaje Nominal": "2V",
+        "Capacidad (C10)": "1000Ah",
+        "Vida Flotante": "12 años @ 25°C",
+        "Temperatura de Operación": "-20°C a 50°C",
+        "Aplicación": "Bancos de baterías grandes",
+        "Diseño": "Front Access",
+        "Alta corriente": "Sí"
+      },
       "caracteristicas": [
         "Celda individual de 2V",
         "Diseño Front Access",
@@ -63,6 +104,19 @@
       "capacidad": "150Ah",
       "vidaFlotante": "12",
       "aplicacion": "UPS, Sistemas críticos",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=EST-GEL-12V-150AH"
+      ],
+      "specifications": {
+        "Tipo": "Gel VRLA",
+        "Voltaje Nominal": "12V",
+        "Capacidad (C10)": "150Ah",
+        "Vida Flotante": "12 años @ 25°C",
+        "Temperatura de Operación": "-20°C a 55°C",
+        "Aplicación": "UPS, Sistemas críticos",
+        "Diseño": "Modular",
+        "Garantía": "Extendida disponible"
+      },
       "caracteristicas": [
         "Tecnología de gel estabilizado",
         "Baja impedancia interna",
@@ -79,6 +133,19 @@
       "capacidad": "65Ah",
       "vidaFlotante": "8",
       "aplicacion": "Alarmas, Iluminación emergencia",
+      "images": [
+        "https://via.placeholder.com/800x600/333/fff?text=EST-AGM-12V-65AH"
+      ],
+      "specifications": {
+        "Tipo": "VRLA AGM",
+        "Voltaje Nominal": "12V",
+        "Capacidad (C10)": "65Ah",
+        "Vida Flotante": "8 años @ 25°C",
+        "Temperatura de Operación": "-20°C a 50°C",
+        "Aplicación": "Alarmas, Iluminación emergencia",
+        "Montaje": "Múltiples posiciones",
+        "Relación": "Precio-calidad óptima"
+      },
       "caracteristicas": [
         "Compacta y eficiente",
         "Rápida instalación",
