@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - TAO Power</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html" id="logo-link">
+                <img src="https://taopower.com.ar/assets/images/logo-blanco-122x86.png" alt="TAO Power" height="43" id="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="baterias/index.html" id="navbarDropdownBaterias" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Baterías
+                        </a>
+                        <div class="dropdown-menu mega-menu" aria-labelledby="navbarDropdownBaterias">
+                            <div class="row">
+                                <div class="col-md-6 mega-menu-column">
+                                    <h6><a href="../baterias/traccion/index.html" class="text-decoration-none text-orange fw-bold">Baterías de Tracción</a></h6>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#montacargas-electricos">Montacargas Eléctricos</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#montacargas-3-ruedas">Montacargas de 3 Ruedas</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#montacargas-pesados">Montacargas de Servicio Pesado</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#montacargas-pasillo-estrecho">Montacargas de Pasillo Estrecho</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#montacargas-contrapeso">Montacargas de Contrapeso</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#reach-truck">Reach Truck</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#transpaleta">Transpaleta Eléctrica</a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#tractor-remolque">Tractor de Remolque Eléctrico</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#apilador">Apilador Eléctrico</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#locomotora-minera">Locomotora Minera</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#maquina-limpieza">Máquina de Limpieza de Pisos</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#equipo-agricola">Equipo Agrícola</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#miniexcavadora">Miniexcavadora</a>
+                                            <a class="dropdown-item" href="../baterias/traccion/index.html#agv">Vehículo Guiado Automáticamente</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mega-menu-column">
+                                    <h6><a href="../baterias/ciclado/index.html" class="text-decoration-none text-orange fw-bold">Baterías de Ciclado Profundo</a></h6>
+                                    <a class="dropdown-item" href="../baterias/ciclado/index.html#carrito-golf">Carrito de Golf</a>
+                                    <a class="dropdown-item" href="../baterias/ciclado/index.html#vehiculo-utilitario">Vehículo Utilitario</a>
+                                    <a class="dropdown-item" href="../baterias/ciclado/index.html#remolcador-equipaje">Remolcador de Equipaje</a>
+                                    <a class="dropdown-item" href="../baterias/ciclado/index.html#equipos-aeropuerto">Equipos de Aeropuerto</a>
+                                    <a class="dropdown-item" href="../baterias/ciclado/index.html#plataforma-elevacion">Plataforma de Elevación</a>
+                                </div>
+                                <div class="col-md-3 mega-menu-column">
+                                    <h6><a href="../baterias/estacionaria/index.html" class="text-decoration-none text-orange fw-bold">Baterías Estacionarias</a></h6>
+                                    <a class="dropdown-item" href="../baterias/estacionaria/index.html#sistemas-ups">Sistemas UPS</a>
+                                    <a class="dropdown-item" href="../baterias/estacionaria/index.html#telecomunicaciones">Telecomunicaciones</a>
+                                    <a class="dropdown-item" href="../baterias/estacionaria/index.html#energia-solar">Sistemas de Energía Solar</a>
+                                    <a class="dropdown-item" href="../baterias/estacionaria/index.html#centros-datos">Centros de Datos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCargadores" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cargadores
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownCargadores">
+                            <li><a class="dropdown-item" href="../cargadores/alta-frecuencia-hf-plus.html">Alta Frecuencia HF Plus</a></li>
+                            <li><a class="dropdown-item" href="../cargadores/alta-frecuencia-hf.html">Alta Frecuencia HF</a></li>
+                            <li><a class="dropdown-item" href="../cargadores/automatico-wa.html">Automático WA</a></li>
+                            <li><a class="dropdown-item" href="../cargadores/fondo-flote.html">Fondo Flote</a></li>
+                            <li><a class="dropdown-item" href="../cargadores/ti-iui.html">TI-IUI</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownEnergiaSolar" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Energía Solar
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownEnergiaSolar">
+                            <li><a class="dropdown-item" href="../energia-solar/sistemas-generacion.html">Sistemas de Generación</a></li>
+                            <li><a class="dropdown-item" href="../energia-solar/termotanques.html">Termotanques</a></li>
+                            <li><a class="dropdown-item" href="../energia-solar/bombeo.html">Bombeo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownServicios" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownServicios">
+                            <li><a class="dropdown-item" href="mantenimiento.html">MANTENIMIENTO Preventivo y Correctivo</a></li>
+                            <li><a class="dropdown-item" href="reparacion.html">REPARACION Baterías Tracción y Cargadores</a></li>
+                            <li><a class="dropdown-item" href="capacitacion.html">CAPACITACION</a></li>
+                            <li><a class="dropdown-item" href="proyectos.html">PROYECTOS Llave en mano</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../index.html#contacto" class="btn btn-orange btn-sm ms-2">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-3">Nuestros <span class="text-orange">Servicios</span></h1>
+                    <p class="lead">Soluciones integrales para maximizar el rendimiento de tus equipos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Mantenimiento -->
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-4">
+                                <i class="bi bi-tools display-1 text-orange"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">Mantenimiento</h3>
+                            <h5 class="text-muted mb-3">Preventivo y Correctivo</h5>
+                            <p class="text-muted mb-4">
+                                Servicios profesionales de mantenimiento para baterías y cargadores, 
+                                garantizando la máxima vida útil y rendimiento de tus equipos.
+                            </p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Inspección y diagnóstico
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Mantenimiento preventivo programado
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Mantenimiento correctivo
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Reportes detallados
+                                </li>
+                            </ul>
+                            <a href="mantenimiento.html" class="btn btn-orange w-100">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reparación -->
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-4">
+                                <i class="bi bi-wrench-adjustable display-1 text-orange"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">Reparación</h3>
+                            <h5 class="text-muted mb-3">Baterías de Tracción y Cargadores</h5>
+                            <p class="text-muted mb-4">
+                                Servicio especializado de reparación con técnicos certificados y 
+                                repuestos originales para extender la vida útil de tus equipos.
+                            </p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Diagnóstico preciso
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Reparación de baterías
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Reparación de cargadores
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Garantía en reparaciones
+                                </li>
+                            </ul>
+                            <a href="reparacion.html" class="btn btn-orange w-100">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capacitación -->
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-4">
+                                <i class="bi bi-mortarboard display-1 text-orange"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">Capacitación</h3>
+                            <h5 class="text-muted mb-3">Técnica y Operativa</h5>
+                            <p class="text-muted mb-4">
+                                Programas de capacitación personalizados para operadores y personal técnico, 
+                                mejorando el uso y cuidado de baterías y equipos.
+                            </p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Capacitación operativa
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Capacitación técnica
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Buenas prácticas
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Material didáctico incluido
+                                </li>
+                            </ul>
+                            <a href="capacitacion.html" class="btn btn-orange w-100">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyectos -->
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-4">
+                                <i class="bi bi-building display-1 text-orange"></i>
+                            </div>
+                            <h3 class="fw-bold mb-3">Proyectos</h3>
+                            <h5 class="text-muted mb-3">Llave en Mano</h5>
+                            <p class="text-muted mb-4">
+                                Desarrollo completo de proyectos energéticos desde el diseño hasta la puesta 
+                                en marcha, incluyendo ingeniería, instalación y soporte.
+                            </p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Diseño e ingeniería
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Instalación completa
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Puesta en marcha
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check-circle-fill text-orange me-2"></i>
+                                    Soporte post-instalación
+                                </li>
+                            </ul>
+                            <a href="proyectos.html" class="btn btn-orange w-100">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="h3 fw-bold mb-5 text-center">¿Por qué elegir nuestros servicios?</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <i class="bi bi-patch-check display-4 text-orange mb-3"></i>
+                        <h5 class="fw-bold">Experiencia Comprobada</h5>
+                        <p class="text-muted">Años de trayectoria en el sector energético</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <i class="bi bi-people display-4 text-orange mb-3"></i>
+                        <h5 class="fw-bold">Equipo Especializado</h5>
+                        <p class="text-muted">Técnicos certificados y capacitados</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <i class="bi bi-clock-history display-4 text-orange mb-3"></i>
+                        <h5 class="fw-bold">Respuesta Rápida</h5>
+                        <p class="text-muted">Atención inmediata a tus necesidades</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="text-center">
+                        <i class="bi bi-shield-check display-4 text-orange mb-3"></i>
+                        <h5 class="fw-bold">Garantía de Calidad</h5>
+                        <p class="text-muted">Servicios garantizados y certificados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 <span class="text-orange fw-bold">TAO Power</span>. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://taopower.com.ar" class="text-white-50 text-decoration-none">www.taopower.com.ar</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Disable logo click -->
+    <script>
+        const logoLink = document.getElementById('logo-link');
+        if (logoLink) {
+            logoLink.addEventListener('click', function(e) {
+                e.preventDefault();
+            });
+            logoLink.style.cursor = 'default';
+        }
+    </script>
+</body>
+</html>
