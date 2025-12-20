@@ -1,10 +1,6 @@
 [
   {
     "modelo": "LI-TRAC-24V-200AH",
-    "voltaje": "24V",
-    "capacidad": "200Ah",
-    "peso": "66",
-    "energia": "4.8",
     "aplicacion": "Transpaletas eléctricas",
     "images": [
       "https://placehold.co/800x600/333/fff?text=LI-TRAC-24V-200AH",
@@ -35,10 +31,6 @@
   },
   {
     "modelo": "LI-TRAC-48V-300AH",
-    "voltaje": "48V",
-    "capacidad": "300Ah",
-    "peso": "180",
-    "energia": "14.4",
     "aplicacion": "Montacargas medianos",
     "images": [
       "https://placehold.co/800x600/333/fff?text=LI-TRAC-48V-300AH"
@@ -68,10 +60,6 @@
   },
   {
     "modelo": "LI-TRAC-80V-450AH",
-    "voltaje": "80V",
-    "capacidad": "450Ah",
-    "peso": "420",
-    "energia": "36",
     "aplicacion": "Montacargas pesados",
     "images": [
       "https://placehold.co/800x600/333/fff?text=LI-TRAC-80V-450AH"
@@ -101,10 +89,6 @@
   },
   {
     "modelo": "LI-TRAC-48V-560AH",
-    "voltaje": "48V",
-    "capacidad": "560Ah",
-    "peso": "320",
-    "energia": "26.9",
     "aplicacion": "AGVs y robots móviles",
     "images": [
       "https://placehold.co/800x600/333/fff?text=LI-TRAC-48V-560AH"
@@ -134,10 +118,6 @@
   },
   {
     "modelo": "TRAC-24V-300AH",
-    "voltaje": "24V",
-    "capacidad": "300Ah",
-    "peso": "285",
-    "dimensiones": "470 x 200 x 470",
     "aplicacion": "Montacargas pequeños",
     "images": [
       "https://placehold.co/800x600/333/fff?text=TRAC-24V-300AH",
@@ -166,10 +146,6 @@
   },
   {
     "modelo": "TRAC-48V-500AH",
-    "voltaje": "48V",
-    "capacidad": "500Ah",
-    "peso": "620",
-    "dimensiones": "625 x 310 x 625",
     "aplicacion": "Montacargas medianos",
     "images": [
       "https://placehold.co/800x600/333/fff?text=TRAC-48V-500AH",
@@ -197,10 +173,6 @@
   },
   {
     "modelo": "TRAC-48V-775AH",
-    "voltaje": "48V",
-    "capacidad": "775Ah",
-    "peso": "950",
-    "dimensiones": "850 x 350 x 650",
     "aplicacion": "Montacargas pesados",
     "images": [
       "https://placehold.co/800x600/333/fff?text=TRAC-48V-775AH"
@@ -227,10 +199,6 @@
   },
   {
     "modelo": "TRAC-80V-400AH",
-    "voltaje": "80V",
-    "capacidad": "400Ah",
-    "peso": "890",
-    "dimensiones": "780 x 340 x 620",
     "aplicacion": "Equipos industriales pesados",
     "images": [
       "https://placehold.co/800x600/333/fff?text=TRAC-80V-400AH"
@@ -257,10 +225,6 @@
   },
   {
     "modelo": "TRAC-36V-420AH",
-    "voltaje": "36V",
-    "capacidad": "420Ah",
-    "peso": "445",
-    "dimensiones": "550 x 280 x 550",
     "aplicacion": "Transpaletas eléctricas",
     "images": [
       "https://placehold.co/800x600/333/fff?text=TRAC-36V-420AH"

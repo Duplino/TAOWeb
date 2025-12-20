@@ -188,16 +188,22 @@ function createProductCard(product, type) {
     
     const subtitle = document.createElement('p');
     subtitle.className = 'card-text text-muted mb-3';
-    subtitle.textContent = product.aplicacion || '';
+    subtitle.textContent = product.aplicacion || product.specifications['Aplicación'] || '';
     cardBody.appendChild(subtitle);
     
     const specsList = document.createElement('div');
     specsList.className = 'mb-3';
     
+    // Extract values from specifications object
+    const voltaje = product.specifications['Voltaje Nominal'] || '';
+    const capacidad = product.specifications['Capacidad'] || product.specifications['Capacidad (C5)'] || '';
+    const energiaValue = product.specifications['Energía'];
+    const tipoValue = product.specifications['Tipo'];
+    
     const specs = [
-        { label: 'Voltaje', value: product.voltaje },
-        { label: 'Capacidad', value: product.capacidad },
-        { label: product.energia ? 'Energía' : 'Tipo', value: product.energia ? `${product.energia} kWh` : product.tipo }
+        { label: 'Voltaje', value: voltaje },
+        { label: 'Capacidad', value: capacidad },
+        { label: energiaValue ? 'Energía' : 'Tipo', value: energiaValue || tipoValue || '' }
     ];
     
     specs.forEach(spec => {

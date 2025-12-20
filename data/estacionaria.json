@@ -1,10 +1,6 @@
 [
   {
     "modelo": "LI-EST-48V-100AH",
-    "voltaje": "48V",
-    "capacidad": "100Ah",
-    "energia": "4.8",
-    "peso": "52",
     "aplicacion": "UPS, Telecomunicaciones",
     "images": [
       "https://placehold.co/800x600/333/fff?text=LI-EST-48V-100AH"
@@ -36,10 +32,6 @@
   },
   {
     "modelo": "LI-EST-48V-200AH",
-    "voltaje": "48V",
-    "capacidad": "200Ah",
-    "energia": "9.6",
-    "peso": "95",
     "aplicacion": "Data Centers, UPS críticos",
     "images": [
       "https://placehold.co/800x600/333/fff?text=LI-EST-48V-200AH"
@@ -71,10 +63,6 @@
   },
   {
     "modelo": "LI-EST-384V-150AH",
-    "voltaje": "384V",
-    "capacidad": "150Ah",
-    "energia": "57.6",
-    "peso": "480",
     "aplicacion": "Almacenamiento solar comercial",
     "images": [
       "https://placehold.co/800x600/333/fff?text=LI-EST-384V-150AH"
@@ -105,10 +93,6 @@
   },
   {
     "modelo": "LI-EST-51.2V-280AH",
-    "voltaje": "51.2V",
-    "capacidad": "280Ah",
-    "energia": "14.3",
-    "peso": "135",
     "aplicacion": "Microgrids, ESS industrial",
     "images": [
       "https://placehold.co/800x600/333/fff?text=LI-EST-51.2V-280AH"
@@ -139,10 +123,6 @@
   },
   {
     "modelo": "LI-EST-48V-50AH",
-    "voltaje": "48V",
-    "capacidad": "50Ah",
-    "energia": "2.4",
-    "peso": "28",
     "aplicacion": "Telecom, Small UPS",
     "images": [
       "https://placehold.co/800x600/333/fff?text=LI-EST-48V-50AH"
@@ -173,9 +153,6 @@
   },
   {
     "modelo": "EST-AGM-12V-100AH",
-    "tipo": "AGM",
-    "voltaje": "12V",
-    "capacidad": "100Ah",
     "vidaFlotante": "10",
     "aplicacion": "UPS, Telecomunicaciones",
     "images": [
@@ -204,9 +181,6 @@
   },
   {
     "modelo": "EST-GEL-12V-200AH",
-    "tipo": "Gel",
-    "voltaje": "12V",
-    "capacidad": "200Ah",
     "vidaFlotante": "15",
     "aplicacion": "Telecomunicaciones, Data Centers",
     "images": [
@@ -235,9 +209,6 @@
   },
   {
     "modelo": "EST-AGM-2V-1000AH",
-    "tipo": "AGM",
-    "voltaje": "2V",
-    "capacidad": "1000Ah",
     "vidaFlotante": "12",
     "aplicacion": "Bancos de baterías grandes",
     "images": [
@@ -266,9 +237,6 @@
   },
   {
     "modelo": "EST-GEL-12V-150AH",
-    "tipo": "Gel",
-    "voltaje": "12V",
-    "capacidad": "150Ah",
     "vidaFlotante": "12",
     "aplicacion": "UPS, Sistemas críticos",
     "images": [
@@ -297,9 +265,6 @@
   },
   {
     "modelo": "EST-AGM-12V-65AH",
-    "tipo": "AGM",
-    "voltaje": "12V",
-    "capacidad": "65Ah",
     "vidaFlotante": "8",
     "aplicacion": "Alarmas, Iluminación emergencia",
     "images": [

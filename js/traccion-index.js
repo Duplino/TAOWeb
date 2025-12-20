@@ -260,17 +260,23 @@ function createProductCard(product, type) {
     
     const subtitle = document.createElement('p');
     subtitle.className = 'card-text text-muted mb-3';
-    subtitle.textContent = product.aplicacion || '';
+    subtitle.textContent = product.aplicacion || product.specifications['Aplicación'] || '';
     cardBody.appendChild(subtitle);
     
-    // Specs list
+    // Specs list - extract from specifications object
     const specsList = document.createElement('div');
     specsList.className = 'mb-3';
     
+    // Extract values from specifications object
+    const voltaje = product.specifications['Voltaje Nominal'] || '';
+    const capacidad = product.specifications['Capacidad'] || product.specifications['Capacidad (C5)'] || '';
+    const energiaValue = product.specifications['Energía'];
+    const pesoValue = product.specifications['Peso'];
+    
     const specs = [
-        { label: 'Voltaje', value: product.voltaje },
-        { label: 'Capacidad', value: product.capacidad },
-        { label: product.energia ? 'Energía' : 'Peso', value: product.energia ? `${product.energia} kWh` : `${product.peso} kg` }
+        { label: 'Voltaje', value: voltaje },
+        { label: 'Capacidad', value: capacidad },
+        { label: energiaValue ? 'Energía' : 'Peso', value: energiaValue || pesoValue || '' }
     ];
     
     specs.forEach(spec => {

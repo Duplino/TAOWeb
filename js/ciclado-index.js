@@ -175,16 +175,21 @@ function createProductCard(product) {
     
     const subtitle = document.createElement('p');
     subtitle.className = 'card-text text-muted mb-3';
-    subtitle.textContent = product.aplicacion || '';
+    subtitle.textContent = product.aplicacion || product.specifications['Aplicación'] || '';
     cardBody.appendChild(subtitle);
     
     const specsList = document.createElement('div');
     specsList.className = 'mb-3';
     
+    // Extract values from specifications object
+    const voltaje = product.specifications['Voltaje Nominal'] || '';
+    const capacidad = product.specifications['Capacidad'] || product.specifications['Capacidad (C5)'] || '';
+    const tipo = product.specifications['Tipo'] || '';
+    
     const specs = [
-        { label: 'Voltaje', value: product.voltaje },
-        { label: 'Capacidad', value: product.capacidad },
-        { label: 'Tipo', value: product.tipo }
+        { label: 'Voltaje', value: voltaje },
+        { label: 'Capacidad', value: capacidad },
+        { label: 'Tipo', value: tipo }
     ];
     
     specs.forEach(spec => {
