@@ -182,94 +182,69 @@ function renderCards(containerId, products, type) {
     if (products.length > 3) {
         renderCarousel(container, products, type);
     } else {
-        // Render as grid
+        // Render as grid - wrap cards in columns for grid layout
         products.forEach((product) => {
+            const col = document.createElement('div');
+            col.className = 'col-md-4';
             const card = createProductCard(product, type);
-            container.appendChild(card);
+            col.appendChild(card);
+            container.appendChild(col);
         });
     }
 }
 
-// Create carousel HTML
+// Create carousel HTML using Owl Carousel
 function renderCarousel(container, products, type) {
-    const carouselId = `carousel-${type}-${Date.now()}`;
+    const carouselId = `owl-carousel-${type}-${Date.now()}`;
     
+    // Create carousel wrapper
     const carousel = document.createElement('div');
     carousel.id = carouselId;
-    carousel.className = 'carousel slide';
-    carousel.setAttribute('data-bs-ride', 'carousel');
+    carousel.className = 'owl-carousel owl-theme battery-carousel';
     
-    // Carousel indicators
-    const indicators = document.createElement('div');
-    indicators.className = 'carousel-indicators';
-    const numSlides = Math.ceil(products.length / 3);
-    for (let i = 0; i < numSlides; i++) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.setAttribute('data-bs-target', `#${carouselId}`);
-        button.setAttribute('data-bs-slide-to', i);
-        if (i === 0) button.className = 'active';
-        indicators.appendChild(button);
-    }
-    carousel.appendChild(indicators);
-    
-    // Carousel inner
-    const carouselInner = document.createElement('div');
-    carouselInner.className = 'carousel-inner';
-    
-    // Create slides (3 items per slide on desktop, 1 on mobile)
-    for (let i = 0; i < products.length; i += 3) {
-        const slide = document.createElement('div');
-        slide.className = i === 0 ? 'carousel-item active' : 'carousel-item';
-        
-        const row = document.createElement('div');
-        row.className = 'row g-4';
-        
-        // Add up to 3 products per slide
-        const slideProducts = products.slice(i, i + 3);
-        slideProducts.forEach(product => {
-            const card = createProductCard(product, type);
-            row.appendChild(card);
-        });
-        
-        slide.appendChild(row);
-        carouselInner.appendChild(slide);
-    }
-    carousel.appendChild(carouselInner);
-    
-    // Carousel controls
-    const prevButton = document.createElement('button');
-    prevButton.className = 'carousel-control-prev';
-    prevButton.type = 'button';
-    prevButton.setAttribute('data-bs-target', `#${carouselId}`);
-    prevButton.setAttribute('data-bs-slide', 'prev');
-    prevButton.innerHTML = '<span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span>';
-    
-    const nextButton = document.createElement('button');
-    nextButton.className = 'carousel-control-next';
-    nextButton.type = 'button';
-    nextButton.setAttribute('data-bs-target', `#${carouselId}`);
-    nextButton.setAttribute('data-bs-slide', 'next');
-    nextButton.innerHTML = '<span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span>';
-    
-    carousel.appendChild(prevButton);
-    carousel.appendChild(nextButton);
+    // Add each product as a carousel item
+    products.forEach(product => {
+        const card = createProductCard(product, type);
+        carousel.appendChild(card);
+    });
     
     container.appendChild(carousel);
+    
+    // Initialize Owl Carousel after a short delay to ensure DOM is ready
+    setTimeout(() => {
+        $(`#${carouselId}`).owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: true,
+            navText: [
+                '<i class="bi bi-chevron-left"></i>',
+                '<i class="bi bi-chevron-right"></i>'
+            ],
+            responsive: {
+                0: {
+                    items: 1  // 1 item on mobile
+                },
+                768: {
+                    items: 2  // 2 items on tablet
+                },
+                992: {
+                    items: 3  // 3 items on desktop
+                }
+            }
+        });
+    }, 100);
 }
 
 // Create a product card
 function createProductCard(product, type) {
-    const col = document.createElement('div');
-    col.className = 'col-md-4';
-    
     const card = document.createElement('div');
     card.className = 'card h-100 shadow-sm border-0';
     card.style.cursor = 'pointer';
     
     // Card Image
     const img = document.createElement('img');
-    img.src = product.images && product.images.length > 0 ? product.images[0] : 'https://placehold.co/400x300/333/fff/fff?text=No+Image';
+    img.src = product.images && product.images.length > 0 ? product.images[0] : 'https://placehold.co/400x300/333/fff?text=No+Image';
     img.className = 'card-img-top';
     img.alt = product.modelo;
     card.appendChild(img);
@@ -317,7 +292,6 @@ function createProductCard(product, type) {
     cardBody.appendChild(link);
     
     card.appendChild(cardBody);
-    col.appendChild(card);
     
-    return col;
+    return card;
 }

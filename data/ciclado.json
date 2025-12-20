@@ -7,7 +7,7 @@
     "ciclos": "800 (50% DOD)",
     "aplicacion": "Solar, RV, Náutica",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=DC-AGM-12V-100AH"
+      "https://placehold.co/800x600/333/fff?text=DC-AGM-12V-100AH"
     ],
     "specifications": {
       "Tipo": "AGM Sealed",
@@ -38,7 +38,7 @@
     "ciclos": "1200 (50% DOD)",
     "aplicacion": "Solar off-grid, Telecomunicaciones",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=DC-GEL-12V-200AH"
+      "https://placehold.co/800x600/333/fff?text=DC-GEL-12V-200AH"
     ],
     "specifications": {
       "Tipo": "Gel VRLA",
@@ -69,7 +69,7 @@
     "ciclos": "900 (50% DOD)",
     "aplicacion": "Carritos de golf, RV",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=DC-AGM-6V-225AH"
+      "https://placehold.co/800x600/333/fff?text=DC-AGM-6V-225AH"
     ],
     "specifications": {
       "Tipo": "AGM Sealed",
@@ -100,7 +100,7 @@
     "ciclos": "1500 (30% DOD)",
     "aplicacion": "Sistemas solares, Embarcaciones",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=DC-GEL-12V-150AH"
+      "https://placehold.co/800x600/333/fff?text=DC-GEL-12V-150AH"
     ],
     "specifications": {
       "Tipo": "Gel VRLA",
@@ -131,7 +131,7 @@
     "ciclos": "700 (50% DOD)",
     "aplicacion": "Solar pequeña escala, UPS",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=DC-AGM-12V-75AH"
+      "https://placehold.co/800x600/333/fff?text=DC-AGM-12V-75AH"
     ],
     "specifications": {
       "Tipo": "AGM Sealed",

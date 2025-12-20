@@ -7,8 +7,8 @@
     "energia": "4.8",
     "aplicacion": "Transpaletas eléctricas",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=LI-TRAC-24V-200AH",
-      "https://placehold.co/800x600/333/fff/fff?text=LI-TRAC-24V-200AH-Side"
+      "https://placehold.co/800x600/333/fff?text=LI-TRAC-24V-200AH",
+      "https://placehold.co/800x600/333/fff?text=LI-TRAC-24V-200AH-Side"
     ],
     "specifications": {
       "Tipo": "LiFePO4",
@@ -41,7 +41,7 @@
     "energia": "14.4",
     "aplicacion": "Montacargas medianos",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=LI-TRAC-48V-300AH"
+      "https://placehold.co/800x600/333/fff?text=LI-TRAC-48V-300AH"
     ],
     "specifications": {
       "Tipo": "LiFePO4",
@@ -74,7 +74,7 @@
     "energia": "36",
     "aplicacion": "Montacargas pesados",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=LI-TRAC-80V-450AH"
+      "https://placehold.co/800x600/333/fff?text=LI-TRAC-80V-450AH"
     ],
     "specifications": {
       "Tipo": "LiFePO4",
@@ -107,7 +107,7 @@
     "energia": "26.9",
     "aplicacion": "AGVs y robots móviles",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=LI-TRAC-48V-560AH"
+      "https://placehold.co/800x600/333/fff?text=LI-TRAC-48V-560AH"
     ],
     "specifications": {
       "Tipo": "LiFePO4",
@@ -140,9 +140,9 @@
     "dimensiones": "470 x 200 x 470",
     "aplicacion": "Montacargas pequeños",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=TRAC-24V-300AH",
-      "https://placehold.co/800x600/333/fff/fff?text=TRAC-24V-300AH-Side",
-      "https://placehold.co/800x600/333/fff/fff?text=TRAC-24V-300AH-Top"
+      "https://placehold.co/800x600/333/fff?text=TRAC-24V-300AH",
+      "https://placehold.co/800x600/333/fff?text=TRAC-24V-300AH-Side",
+      "https://placehold.co/800x600/333/fff?text=TRAC-24V-300AH-Top"
     ],
     "specifications": {
       "Tipo": "Pb-Ac Tubular",
@@ -172,8 +172,8 @@
     "dimensiones": "625 x 310 x 625",
     "aplicacion": "Montacargas medianos",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=TRAC-48V-500AH",
-      "https://placehold.co/800x600/333/fff/fff?text=TRAC-48V-500AH-Side"
+      "https://placehold.co/800x600/333/fff?text=TRAC-48V-500AH",
+      "https://placehold.co/800x600/333/fff?text=TRAC-48V-500AH-Side"
     ],
     "specifications": {
       "Tipo": "Pb-Ac Tubular",
@@ -203,7 +203,7 @@
     "dimensiones": "850 x 350 x 650",
     "aplicacion": "Montacargas pesados",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=TRAC-48V-775AH"
+      "https://placehold.co/800x600/333/fff?text=TRAC-48V-775AH"
     ],
     "specifications": {
       "Tipo": "Pb-Ac Tubular",
@@ -233,7 +233,7 @@
     "dimensiones": "780 x 340 x 620",
     "aplicacion": "Equipos industriales pesados",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=TRAC-80V-400AH"
+      "https://placehold.co/800x600/333/fff?text=TRAC-80V-400AH"
     ],
     "specifications": {
       "Tipo": "Pb-Ac Tubular",
@@ -263,7 +263,7 @@
     "dimensiones": "550 x 280 x 550",
     "aplicacion": "Transpaletas eléctricas",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=TRAC-36V-420AH"
+      "https://placehold.co/800x600/333/fff?text=TRAC-36V-420AH"
     ],
     "specifications": {
       "Tipo": "Pb-Ac Tubular",

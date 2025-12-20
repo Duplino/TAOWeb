@@ -7,7 +7,7 @@
     "peso": "52",
     "aplicacion": "UPS, Telecomunicaciones",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=LI-EST-48V-100AH"
+      "https://placehold.co/800x600/333/fff?text=LI-EST-48V-100AH"
     ],
     "specifications": {
       "Tipo": "LiFePO4 (LFP)",
@@ -42,7 +42,7 @@
     "peso": "95",
     "aplicacion": "Data Centers, UPS críticos",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=LI-EST-48V-200AH"
+      "https://placehold.co/800x600/333/fff?text=LI-EST-48V-200AH"
     ],
     "specifications": {
       "Tipo": "LiFePO4 (LFP)",
@@ -77,7 +77,7 @@
     "peso": "480",
     "aplicacion": "Almacenamiento solar comercial",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=LI-EST-384V-150AH"
+      "https://placehold.co/800x600/333/fff?text=LI-EST-384V-150AH"
     ],
     "specifications": {
       "Tipo": "LiFePO4 (LFP)",
@@ -111,7 +111,7 @@
     "peso": "135",
     "aplicacion": "Microgrids, ESS industrial",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=LI-EST-51.2V-280AH"
+      "https://placehold.co/800x600/333/fff?text=LI-EST-51.2V-280AH"
     ],
     "specifications": {
       "Tipo": "LiFePO4 (LFP)",
@@ -145,7 +145,7 @@
     "peso": "28",
     "aplicacion": "Telecom, Small UPS",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=LI-EST-48V-50AH"
+      "https://placehold.co/800x600/333/fff?text=LI-EST-48V-50AH"
     ],
     "specifications": {
       "Tipo": "LiFePO4 (LFP)",
@@ -179,7 +179,7 @@
     "vidaFlotante": "10",
     "aplicacion": "UPS, Telecomunicaciones",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=EST-AGM-12V-100AH"
+      "https://placehold.co/800x600/333/fff?text=EST-AGM-12V-100AH"
     ],
     "specifications": {
       "Tipo": "VRLA AGM",
@@ -210,7 +210,7 @@
     "vidaFlotante": "15",
     "aplicacion": "Telecomunicaciones, Data Centers",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=EST-GEL-12V-200AH"
+      "https://placehold.co/800x600/333/fff?text=EST-GEL-12V-200AH"
     ],
     "specifications": {
       "Tipo": "Gel VRLA",
@@ -241,7 +241,7 @@
     "vidaFlotante": "12",
     "aplicacion": "Bancos de baterías grandes",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=EST-AGM-2V-1000AH"
+      "https://placehold.co/800x600/333/fff?text=EST-AGM-2V-1000AH"
     ],
     "specifications": {
       "Tipo": "VRLA AGM",
@@ -272,7 +272,7 @@
     "vidaFlotante": "12",
     "aplicacion": "UPS, Sistemas críticos",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=EST-GEL-12V-150AH"
+      "https://placehold.co/800x600/333/fff?text=EST-GEL-12V-150AH"
     ],
     "specifications": {
       "Tipo": "Gel VRLA",
@@ -303,7 +303,7 @@
     "vidaFlotante": "8",
     "aplicacion": "Alarmas, Iluminación emergencia",
     "images": [
-      "https://placehold.co/800x600/333/fff/fff?text=EST-AGM-12V-65AH"
+      "https://placehold.co/800x600/333/fff?text=EST-AGM-12V-65AH"
     ],
     "specifications": {
       "Tipo": "VRLA AGM",

@@ -119,79 +119,61 @@ function renderCards(containerId, products, type) {
         renderCarousel(container, products, type);
     } else {
         products.forEach(product => {
+            const col = document.createElement('div');
+            col.className = 'col-md-4';
             const card = createProductCard(product, type);
-            container.appendChild(card);
+            col.appendChild(card);
+            container.appendChild(col);
         });
     }
 }
 
 function renderCarousel(container, products, type) {
-    const carouselId = `carousel-${type}-${Date.now()}`;
+    const carouselId = `owl-carousel-${type}-${Date.now()}`;
+    
     const carousel = document.createElement('div');
     carousel.id = carouselId;
-    carousel.className = 'carousel slide';
-    carousel.setAttribute('data-bs-ride', 'carousel');
+    carousel.className = 'owl-carousel owl-theme battery-carousel';
     
-    const indicators = document.createElement('div');
-    indicators.className = 'carousel-indicators';
-    const numSlides = Math.ceil(products.length / 3);
-    for (let i = 0; i < numSlides; i++) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.setAttribute('data-bs-target', `#${carouselId}`);
-        button.setAttribute('data-bs-slide-to', i);
-        if (i === 0) button.className = 'active';
-        indicators.appendChild(button);
-    }
-    carousel.appendChild(indicators);
+    products.forEach(product => {
+        const card = createProductCard(product, type);
+        carousel.appendChild(card);
+    });
     
-    const carouselInner = document.createElement('div');
-    carouselInner.className = 'carousel-inner';
-    
-    for (let i = 0; i < products.length; i += 3) {
-        const slide = document.createElement('div');
-        slide.className = i === 0 ? 'carousel-item active' : 'carousel-item';
-        const row = document.createElement('div');
-        row.className = 'row g-4';
-        const slideProducts = products.slice(i, i + 3);
-        slideProducts.forEach(product => {
-            const card = createProductCard(product, type);
-            row.appendChild(card);
-        });
-        slide.appendChild(row);
-        carouselInner.appendChild(slide);
-    }
-    carousel.appendChild(carouselInner);
-    
-    const prevButton = document.createElement('button');
-    prevButton.className = 'carousel-control-prev';
-    prevButton.type = 'button';
-    prevButton.setAttribute('data-bs-target', `#${carouselId}`);
-    prevButton.setAttribute('data-bs-slide', 'prev');
-    prevButton.innerHTML = '<span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span>';
-    
-    const nextButton = document.createElement('button');
-    nextButton.className = 'carousel-control-next';
-    nextButton.type = 'button';
-    nextButton.setAttribute('data-bs-target', `#${carouselId}`);
-    nextButton.setAttribute('data-bs-slide', 'next');
-    nextButton.innerHTML = '<span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span>';
-    
-    carousel.appendChild(prevButton);
-    carousel.appendChild(nextButton);
     container.appendChild(carousel);
+    
+    setTimeout(() => {
+        $(`#${carouselId}`).owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: true,
+            dots: true,
+            navText: [
+                '<i class="bi bi-chevron-left"></i>',
+                '<i class="bi bi-chevron-right"></i>'
+            ],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                992: {
+                    items: 3
+                }
+            }
+        });
+    }, 100);
 }
 
 function createProductCard(product, type) {
-    const col = document.createElement('div');
-    col.className = 'col-md-4';
-    
     const card = document.createElement('div');
     card.className = 'card h-100 shadow-sm border-0';
     card.style.cursor = 'pointer';
     
     const img = document.createElement('img');
-    img.src = product.images && product.images.length > 0 ? product.images[0] : 'https://placehold.co/400x300/333/fff/fff?text=No+Image';
+    img.src = product.images && product.images.length > 0 ? product.images[0] : 'https://placehold.co/400x300/333/fff?text=No+Image';
     img.className = 'card-img-top';
     img.alt = product.modelo;
     card.appendChild(img);
@@ -236,7 +218,6 @@ function createProductCard(product, type) {
     cardBody.appendChild(link);
     
     card.appendChild(cardBody);
-    col.appendChild(card);
     
-    return col;
+    return card;
 }
