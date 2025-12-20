@@ -33,7 +33,7 @@ async function loadProductFromURL() {
         const jsonFile = `${params.category}.json`;
         
         // Load JSON data
-        const response = await fetch(`../data/${jsonFile}`);
+        const response = await fetch(`../../data/${jsonFile}`);
         if (!response.ok) {
             throw new Error('No se pudo cargar los datos del producto');
         }
@@ -78,9 +78,9 @@ function renderProductDetails() {
     const breadcrumb = `
         <nav aria-label="breadcrumb" class="mb-4">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="index.html">Baterías</a></li>
-                <li class="breadcrumb-item"><a href="${params.category}/index.html">${getCategoryName(params.category)}</a></li>
+                <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="../index.html">Baterías</a></li>
+                <li class="breadcrumb-item"><a href="index.html">${getCategoryName(params.category)}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">${productData.modelo}</li>
             </ol>
         </nav>
@@ -207,7 +207,7 @@ function showError(message) {
             ${message}
         </div>
         <div class="text-center mt-4">
-            <a href="index.html" class="btn btn-orange">Volver al Catálogo</a>
+            <a href="../index.html" class="btn btn-orange">Volver al Catálogo</a>
         </div>
     `;
 }

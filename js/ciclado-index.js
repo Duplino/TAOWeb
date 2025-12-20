@@ -197,7 +197,7 @@ function createProductCard(product) {
                     </div>
                     
                     <!-- Action Button -->
-                    <a href="../product.html?category=ciclado&type=pb-ac&modelo=${encodeURIComponent(product.modelo)}" class="btn btn-orange w-100">
+                    <a href="product.html?category=ciclado&type=pb-ac&modelo=${encodeURIComponent(product.modelo)}" class="btn btn-orange w-100">
                         <i class="bi bi-eye me-2"></i>Ver Detalles
                     </a>
                 </div>
