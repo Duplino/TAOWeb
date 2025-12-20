@@ -29,15 +29,8 @@ async function loadProductFromURL() {
     }
     
     try {
-        // Construct JSON file path based on category and type
-        let jsonFile = '';
-        if (params.category === 'traccion') {
-            jsonFile = params.type === 'ion-li' ? 'traccion-ion-li.json' : 'traccion-pb-ac.json';
-        } else if (params.category === 'ciclado') {
-            jsonFile = 'ciclado-profundo-pb-ac.json';
-        } else if (params.category === 'estacionaria') {
-            jsonFile = params.type === 'ion-li' ? 'estacionarias-ion-li.json' : 'estacionarias-pb-ac.json';
-        }
+        // Construct JSON file path based on category (consolidated files)
+        const jsonFile = `${params.category}.json`;
         
         // Load JSON data
         const response = await fetch(`../data/${jsonFile}`);
@@ -45,14 +38,27 @@ async function loadProductFromURL() {
             throw new Error('No se pudo cargar los datos del producto');
         }
         
-        categoryData = await response.json();
+        const data = await response.json();
+        
+        // Get the specific type data
+        if (!data.types || !data.types[params.type]) {
+            throw new Error('Tipo de batería no encontrado');
+        }
+        
+        const typeData = data.types[params.type];
         
         // Find the specific product by modelo
-        productData = categoryData.data.find(item => item.modelo === params.modelo);
+        productData = typeData.data.find(item => item.modelo === params.modelo);
         
         if (!productData) {
             throw new Error('Producto no encontrado');
         }
+        
+        // Store category info for breadcrumb
+        categoryData = {
+            category: data.category,
+            type: params.type
+        };
         
         // Render product details
         renderProductDetails();
@@ -66,6 +72,7 @@ async function loadProductFromURL() {
 // Render product details
 function renderProductDetails() {
     const container = document.getElementById('productContainer');
+    const params = getURLParams();
     
     // Create breadcrumb
     const breadcrumb = `
@@ -73,7 +80,7 @@ function renderProductDetails() {
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
                 <li class="breadcrumb-item"><a href="index.html">Baterías</a></li>
-                <li class="breadcrumb-item"><a href="${categoryData.category}/index.html">${getCategoryName(categoryData.category)}</a></li>
+                <li class="breadcrumb-item"><a href="${params.category}/index.html">${getCategoryName(params.category)}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">${productData.modelo}</li>
             </ol>
         </nav>

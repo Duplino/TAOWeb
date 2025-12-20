@@ -1,0 +1,335 @@
+{
+  "category": "traccion",
+  "types": {
+    "ion-li": {
+      "type": "ion-li",
+      "columns": [
+        {
+          "key": "modelo",
+          "label": "Modelo"
+        },
+        {
+          "key": "voltaje",
+          "label": "Voltaje"
+        },
+        {
+          "key": "capacidad",
+          "label": "Capacidad (Ah)"
+        },
+        {
+          "key": "peso",
+          "label": "Peso (kg)"
+        },
+        {
+          "key": "energia",
+          "label": "Energía (kWh)"
+        },
+        {
+          "key": "aplicacion",
+          "label": "Aplicación"
+        }
+      ],
+      "data": [
+        {
+          "modelo": "LI-TRAC-24V-200AH",
+          "voltaje": "24V",
+          "capacidad": "200Ah",
+          "peso": "66",
+          "energia": "4.8",
+          "aplicacion": "Transpaletas eléctricas",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-24V-200AH",
+            "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-24V-200AH-Side"
+          ],
+          "specifications": {
+            "Tipo": "LiFePO4",
+            "Voltaje Nominal": "24V (25.6V)",
+            "Capacidad": "200Ah",
+            "Peso": "66 kg",
+            "Energía": "4.8 kWh",
+            "Ciclos de Vida": "3500+ ciclos @ 80% DOD",
+            "Temperatura de Operación": "-10°C a 45°C",
+            "Aplicación": "Transpaletas eléctricas",
+            "BMS": "Protección múltiple integrada",
+            "Comunicación": "CAN bus"
+          },
+          "caracteristicas": [
+            "BMS con protección múltiple",
+            "Carga rápida en 1.5 horas",
+            "Más de 3500 ciclos al 80% DOD",
+            "Comunicación CAN bus",
+            "Temperatura operativa -10°C a 45°C"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/LI-TRAC-24V-200AH.pdf"
+        },
+        {
+          "modelo": "LI-TRAC-48V-300AH",
+          "voltaje": "48V",
+          "capacidad": "300Ah",
+          "peso": "180",
+          "energia": "14.4",
+          "aplicacion": "Montacargas medianos",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-48V-300AH"
+          ],
+          "specifications": {
+            "Tipo": "LiFePO4",
+            "Voltaje Nominal": "48V (51.2V)",
+            "Capacidad": "300Ah",
+            "Peso": "180 kg",
+            "Energía": "14.4 kWh",
+            "Ciclos de Vida": "4000+ ciclos @ 80% DOD",
+            "Temperatura de Operación": "-10°C a 45°C",
+            "Aplicación": "Montacargas medianos",
+            "BMS": "BMS inteligente con IoT",
+            "Comunicación": "CAN bus, RS485"
+          },
+          "caracteristicas": [
+            "Tecnología LiFePO4",
+            "Sin efecto memoria",
+            "Carga oportunista sin degradación",
+            "Monitoreo remoto IoT",
+            "Peso 70% menor que Pb Ac equivalente"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/LI-TRAC-48V-300AH.pdf"
+        },
+        {
+          "modelo": "LI-TRAC-80V-450AH",
+          "voltaje": "80V",
+          "capacidad": "450Ah",
+          "peso": "420",
+          "energia": "36",
+          "aplicacion": "Montacargas pesados",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-80V-450AH"
+          ],
+          "specifications": {
+            "Tipo": "LiFePO4",
+            "Voltaje Nominal": "80V (83.2V)",
+            "Capacidad": "450Ah",
+            "Peso": "420 kg",
+            "Energía": "36 kWh",
+            "Ciclos de Vida": "5000+ ciclos @ 80% DOD",
+            "Temperatura de Operación": "-20°C a 55°C",
+            "Aplicación": "Montacargas pesados",
+            "BMS": "BMS avanzado con enfriamiento activo",
+            "Garantía": "5 años"
+          },
+          "caracteristicas": [
+            "Máxima potencia y rendimiento",
+            "Sistema de enfriamiento activo",
+            "Garantía de 5 años",
+            "Compatible con carga rápida HPC",
+            "Ideal para operación continua"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/LI-TRAC-80V-450AH.pdf"
+        },
+        {
+          "modelo": "LI-TRAC-48V-560AH",
+          "voltaje": "48V",
+          "capacidad": "560Ah",
+          "peso": "320",
+          "energia": "26.9",
+          "aplicacion": "AGVs y robots móviles",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=LI-TRAC-48V-560AH"
+          ],
+          "specifications": {
+            "Tipo": "LiFePO4",
+            "Voltaje Nominal": "48V (51.2V)",
+            "Capacidad": "560Ah",
+            "Peso": "320 kg",
+            "Energía": "26.9 kWh",
+            "Ciclos de Vida": "4000+ ciclos @ 80% DOD",
+            "Temperatura de Operación": "-10°C a 45°C",
+            "Aplicación": "AGVs y robots móviles",
+            "Certificaciones": "UL, CE",
+            "Comunicación": "CAN bus, RS485, WiFi"
+          },
+          "caracteristicas": [
+            "Diseño modular escalable",
+            "Alta densidad energética",
+            "Carga ultra rápida disponible",
+            "Certificación UL y CE",
+            "Dashboard de monitoreo incluido"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/LI-TRAC-48V-560AH.pdf"
+        }
+      ]
+    },
+    "pb-ac": {
+      "type": "pb-ac",
+      "columns": [
+        {
+          "key": "modelo",
+          "label": "Modelo"
+        },
+        {
+          "key": "voltaje",
+          "label": "Voltaje"
+        },
+        {
+          "key": "capacidad",
+          "label": "Capacidad (Ah)"
+        },
+        {
+          "key": "peso",
+          "label": "Peso (kg)"
+        },
+        {
+          "key": "dimensiones",
+          "label": "Dimensiones (mm)"
+        },
+        {
+          "key": "aplicacion",
+          "label": "Aplicación"
+        }
+      ],
+      "data": [
+        {
+          "modelo": "TRAC-24V-300AH",
+          "voltaje": "24V",
+          "capacidad": "300Ah",
+          "peso": "285",
+          "dimensiones": "470 x 200 x 470",
+          "aplicacion": "Montacargas pequeños",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=TRAC-24V-300AH",
+            "https://via.placeholder.com/800x600/333/fff?text=TRAC-24V-300AH-Side",
+            "https://via.placeholder.com/800x600/333/fff?text=TRAC-24V-300AH-Top"
+          ],
+          "specifications": {
+            "Tipo": "Pb-Ac Tubular",
+            "Voltaje Nominal": "24V",
+            "Capacidad (C5)": "300Ah",
+            "Peso": "285 kg",
+            "Dimensiones": "470 x 200 x 470 mm",
+            "Ciclos de Vida": "1200 ciclos @ 80% DOD",
+            "Temperatura de Operación": "-15°C a 45°C",
+            "Aplicación": "Montacargas pequeños"
+          },
+          "caracteristicas": [
+            "Placas tubulares para mayor durabilidad",
+            "Diseño para ciclos profundos",
+            "Mantenimiento cada 6 meses",
+            "Hasta 1200 ciclos de vida útil"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-24V-300AH.pdf"
+        },
+        {
+          "modelo": "TRAC-48V-500AH",
+          "voltaje": "48V",
+          "capacidad": "500Ah",
+          "peso": "620",
+          "dimensiones": "625 x 310 x 625",
+          "aplicacion": "Montacargas medianos",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=TRAC-48V-500AH",
+            "https://via.placeholder.com/800x600/333/fff?text=TRAC-48V-500AH-Side"
+          ],
+          "specifications": {
+            "Tipo": "Pb-Ac Tubular",
+            "Voltaje Nominal": "48V",
+            "Capacidad (C5)": "500Ah",
+            "Peso": "620 kg",
+            "Dimensiones": "625 x 310 x 625 mm",
+            "Ciclos de Vida": "1500 ciclos @ 80% DOD",
+            "Temperatura de Operación": "-15°C a 45°C",
+            "Aplicación": "Montacargas medianos"
+          },
+          "caracteristicas": [
+            "Alta resistencia a vibraciones",
+            "Separadores de alta calidad",
+            "Construcción robusta",
+            "Ideal para uso intensivo"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-48V-500AH.pdf"
+        },
+        {
+          "modelo": "TRAC-48V-775AH",
+          "voltaje": "48V",
+          "capacidad": "775Ah",
+          "peso": "950",
+          "dimensiones": "850 x 350 x 650",
+          "aplicacion": "Montacargas pesados",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=TRAC-48V-775AH"
+          ],
+          "specifications": {
+            "Tipo": "Pb-Ac Tubular",
+            "Voltaje Nominal": "48V",
+            "Capacidad (C5)": "775Ah",
+            "Peso": "950 kg",
+            "Dimensiones": "850 x 350 x 650 mm",
+            "Ciclos de Vida": "1500 ciclos @ 80% DOD",
+            "Temperatura de Operación": "-15°C a 45°C",
+            "Aplicación": "Montacargas pesados"
+          },
+          "caracteristicas": [
+            "Máxima capacidad de carga",
+            "Diseño reforzado",
+            "Placas extra gruesas",
+            "Óptimo para turnos largos"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-48V-775AH.pdf"
+        },
+        {
+          "modelo": "TRAC-80V-400AH",
+          "voltaje": "80V",
+          "capacidad": "400Ah",
+          "peso": "890",
+          "dimensiones": "780 x 340 x 620",
+          "aplicacion": "Equipos industriales pesados",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=TRAC-80V-400AH"
+          ],
+          "specifications": {
+            "Tipo": "Pb-Ac Tubular",
+            "Voltaje Nominal": "80V",
+            "Capacidad (C5)": "400Ah",
+            "Peso": "890 kg",
+            "Dimensiones": "780 x 340 x 620 mm",
+            "Ciclos de Vida": "1500 ciclos @ 80% DOD",
+            "Temperatura de Operación": "-15°C a 45°C",
+            "Aplicación": "Equipos industriales pesados"
+          },
+          "caracteristicas": [
+            "Alto voltaje para máxima potencia",
+            "Tecnología de placas tubulares",
+            "Excelente desempeño en frío",
+            "Mantenimiento predictivo"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-80V-400AH.pdf"
+        },
+        {
+          "modelo": "TRAC-36V-420AH",
+          "voltaje": "36V",
+          "capacidad": "420Ah",
+          "peso": "445",
+          "dimensiones": "550 x 280 x 550",
+          "aplicacion": "Transpaletas eléctricas",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=TRAC-36V-420AH"
+          ],
+          "specifications": {
+            "Tipo": "Pb-Ac Tubular",
+            "Voltaje Nominal": "36V",
+            "Capacidad (C5)": "420Ah",
+            "Peso": "445 kg",
+            "Dimensiones": "550 x 280 x 550 mm",
+            "Ciclos de Vida": "1200 ciclos @ 80% DOD",
+            "Temperatura de Operación": "-15°C a 45°C",
+            "Aplicación": "Transpaletas eléctricas"
+          },
+          "caracteristicas": [
+            "Diseño compacto",
+            "Fácil instalación",
+            "Bajo mantenimiento",
+            "Alta eficiencia energética"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/TRAC-36V-420AH.pdf"
+        }
+      ]
+    }
+  }
+}

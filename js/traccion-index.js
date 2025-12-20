@@ -2,8 +2,7 @@
 // Loads both Ion Li and Pb-Ac battery data and renders cards
 // Supports filtering by application via URL hash
 
-let ionLiData = null;
-let pbAcData = null;
+let categoryData = null;
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -16,16 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load battery data from JSON files
 async function loadBatteryData() {
     try {
-        // Load Ion Li data
-        const ionLiResponse = await fetch('../../data/traccion-ion-li.json');
-        if (ionLiResponse.ok) {
-            ionLiData = await ionLiResponse.json();
-        }
-        
-        // Load Pb-Ac data
-        const pbAcResponse = await fetch('../../data/traccion-pb-ac.json');
-        if (pbAcResponse.ok) {
-            pbAcData = await pbAcResponse.json();
+        // Load consolidated traccion data
+        const response = await fetch('../../data/traccion.json');
+        if (response.ok) {
+            categoryData = await response.json();
         }
         
         // Initial render or filter based on hash
@@ -42,32 +35,111 @@ function handleHashChange() {
     if (hash) {
         // Filter products by application matching the hash
         renderFilteredCards(hash);
+        // Update page title
+        updateFilteredTitle(hash);
     } else {
         // Show all products
-        renderIonLiCards();
-        renderPbAcCards();
+        renderAllCards();
+        // Reset titles
+        resetTitles();
+    }
+}
+
+// Update page title when filtering
+function updateFilteredTitle(filterHash) {
+    const applicationNames = {
+        'montacargas-electricos': 'Montacargas Eléctricos',
+        'montacargas-3-ruedas': 'Montacargas de 3 Ruedas',
+        'montacargas-pesados': 'Montacargas de Servicio Pesado',
+        'montacargas-pasillo-estrecho': 'Montacargas de Pasillo Estrecho',
+        'montacargas-contrapeso': 'Montacargas de Contrapeso',
+        'reach-truck': 'Reach Truck',
+        'transpaleta': 'Transpaleta Eléctrica',
+        'tractor-remolque': 'Tractor de Remolque Eléctrico',
+        'apilador': 'Apilador Eléctrico',
+        'locomotora-minera': 'Locomotora Minera',
+        'maquina-limpieza': 'Máquina de Limpieza de Pisos',
+        'equipo-agricola': 'Equipo Agrícola',
+        'miniexcavadora': 'Miniexcavadora',
+        'agv': 'Vehículo Guiado Automáticamente'
+    };
+    
+    const appName = applicationNames[filterHash] || filterHash.replace(/-/g, ' ');
+    
+    // Update subtitle
+    const subtitle = document.getElementById('pageSubtitle');
+    if (subtitle) {
+        subtitle.textContent = `Modelos destacados para ${appName}`;
+    }
+    
+    // Update section titles
+    const ionLiTitle = document.getElementById('ionLiTitle');
+    if (ionLiTitle) {
+        ionLiTitle.textContent = `Modelos para ${appName} - Tracción Ion Li`;
+    }
+    
+    const pbAcTitle = document.getElementById('pbAcTitle');
+    if (pbAcTitle) {
+        pbAcTitle.textContent = `Modelos para ${appName} - Tracción Pb-Ac`;
+    }
+}
+
+// Reset titles to default
+function resetTitles() {
+    const subtitle = document.getElementById('pageSubtitle');
+    if (subtitle) {
+        subtitle.textContent = 'Soluciones de energía para equipos de manejo de materiales y vehículos industriales';
+    }
+    
+    const ionLiTitle = document.getElementById('ionLiTitle');
+    if (ionLiTitle) {
+        ionLiTitle.textContent = 'Modelos Destacados - Tracción Ion Li';
+    }
+    
+    const pbAcTitle = document.getElementById('pbAcTitle');
+    if (pbAcTitle) {
+        pbAcTitle.textContent = 'Modelos Destacados - Tracción Pb-Ac';
     }
 }
 
 // Render filtered cards based on application
 function renderFilteredCards(filterHash) {
+    if (!categoryData || !categoryData.types) return;
+    
     // Normalize the hash to match application field
     const filterText = normalizeFilterText(filterHash);
     
     // Filter Ion Li products
-    if (ionLiData && ionLiData.data) {
-        const filteredIonLi = ionLiData.data.filter(product => 
+    if (categoryData.types['ion-li'] && categoryData.types['ion-li'].data) {
+        const filteredIonLi = categoryData.types['ion-li'].data.filter(product => 
             matchesFilter(product.aplicacion, filterText)
         );
         renderCards('ionLiCardsContainer', filteredIonLi, 'ion-li');
     }
     
     // Filter Pb-Ac products
-    if (pbAcData && pbAcData.data) {
-        const filteredPbAc = pbAcData.data.filter(product => 
+    if (categoryData.types['pb-ac'] && categoryData.types['pb-ac'].data) {
+        const filteredPbAc = categoryData.types['pb-ac'].data.filter(product => 
             matchesFilter(product.aplicacion, filterText)
         );
         renderCards('pbAcCardsContainer', filteredPbAc, 'pb-ac');
+    }
+}
+
+// Render all cards without filter
+function renderAllCards() {
+    if (!categoryData || !categoryData.types) return;
+    
+    // Show first 3 Ion Li products
+    if (categoryData.types['ion-li'] && categoryData.types['ion-li'].data) {
+        const featuredIonLi = categoryData.types['ion-li'].data.slice(0, 3);
+        renderCards('ionLiCardsContainer', featuredIonLi, 'ion-li');
+    }
+    
+    // Show first 3 Pb-Ac products
+    if (categoryData.types['pb-ac'] && categoryData.types['pb-ac'].data) {
+        const featuredPbAc = categoryData.types['pb-ac'].data.slice(0, 3);
+        renderCards('pbAcCardsContainer', featuredPbAc, 'pb-ac');
     }
 }
 
@@ -102,28 +174,6 @@ function matchesFilter(aplicacion, filterPatterns) {
     return filterPatterns.some(pattern => 
         lowerAplicacion.includes(pattern.toLowerCase())
     );
-}
-
-// Render Ion Li product cards
-function renderIonLiCards() {
-    if (!ionLiData || !ionLiData.data || ionLiData.data.length === 0) {
-        return;
-    }
-    
-    // Show only first 3 products as featured
-    const featuredProducts = ionLiData.data.slice(0, 3);
-    renderCards('ionLiCardsContainer', featuredProducts, 'ion-li');
-}
-
-// Render Pb-Ac product cards
-function renderPbAcCards() {
-    if (!pbAcData || !pbAcData.data || pbAcData.data.length === 0) {
-        return;
-    }
-    
-    // Show only first 3 products as featured
-    const featuredProducts = pbAcData.data.slice(0, 3);
-    renderCards('pbAcCardsContainer', featuredProducts, 'pb-ac');
 }
 
 // Render cards to a container

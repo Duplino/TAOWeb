@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" href="../../index.html" id="logo-link">
                 <img src="https://taopower.com.ar/assets/images/logo-blanco-122x86.png" alt="TAO Power" height="43" id="navbar-logo">
@@ -103,12 +103,20 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header bg-dark text-white py-5" style="margin-top: 76px;">
+    <section class="page-header bg-dark text-white py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb" class="mb-3">
+                        <ol class="breadcrumb bg-transparent mb-0">
+                            <li class="breadcrumb-item"><a href="../../index.html" class="text-white-50">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="../index.html" class="text-white-50">Baterías</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Estacionarias</li>
+                        </ol>
+                    </nav>
                     <h1 class="display-4 fw-bold mb-3">Baterías <span class="text-orange">Estacionarias</span></h1>
-                    <p class="lead">Soluciones de respaldo energético para sistemas críticos</p>
+                    <p class="lead" id="pageSubtitle">Soluciones de respaldo energético para sistemas críticos</p>
                 </div>
             </div>
         </div>
@@ -119,7 +127,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="h3 fw-bold mb-4 text-center">Modelos Destacados - Estacionarias Pb-Ac</h2>
+                    <h2 class="h3 fw-bold mb-4 text-center" id="ionLiTitle">Modelos Destacados - Estacionarias Pb-Ac</h2>
                     <div class="row g-4" id="ionLiCardsContainer">
                         <!-- Cards will be populated by JavaScript -->
                     </div>
@@ -133,7 +141,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h2 class="h3 fw-bold mb-4 text-center">Modelos Destacados - Estacionarias Ion Li</h2>
+                    <h2 class="h3 fw-bold mb-4 text-center" id="pbAcTitle">Modelos Destacados - Estacionarias Ion Li</h2>
                     <div class="row g-4" id="pbAcCardsContainer">
                         <!-- Cards will be populated by JavaScript -->
                     </div>

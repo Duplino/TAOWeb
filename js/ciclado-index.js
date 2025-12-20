@@ -1,8 +1,8 @@
 // Ciclado Profundo Index Page JavaScript
-// Loads Ciclado Profundo Pb-Ac battery data and renders cards
+// Loads Pb-Ac battery data and renders cards
 // Supports filtering by application via URL hash
 
-let pbAcData = null;
+let categoryData = null;
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load battery data from JSON files
 async function loadBatteryData() {
     try {
-        // Load Pb-Ac data
-        const pbAcResponse = await fetch('../../data/ciclado-profundo-pb-ac.json');
-        if (pbAcResponse.ok) {
-            pbAcData = await pbAcResponse.json();
+        // Load consolidated ciclado data
+        const response = await fetch('../../data/ciclado.json');
+        if (response.ok) {
+            categoryData = await response.json();
         }
         
         // Initial render or filter based on hash
@@ -35,23 +35,78 @@ function handleHashChange() {
     if (hash) {
         // Filter products by application matching the hash
         renderFilteredCards(hash);
+        // Update page title
+        updateFilteredTitle(hash);
     } else {
         // Show all products
-        renderPbAcCards();
+        renderAllCards();
+        // Reset titles
+        resetTitles();
+    }
+}
+
+// Update page title when filtering
+function updateFilteredTitle(filterHash) {
+    const applicationNames = {
+        'carrito-golf': 'Carritos de Golf',
+        'vehiculo-utilitario': 'Vehículos Utilitarios',
+        'remolcador-equipaje': 'Remolcadores de Equipaje',
+        'equipos-aeropuerto': 'Equipos de Aeropuerto',
+        'plataforma-elevacion': 'Plataformas de Elevación'
+    };
+    
+    const appName = applicationNames[filterHash] || filterHash.replace(/-/g, ' ');
+    
+    // Update subtitle
+    const subtitle = document.getElementById('pageSubtitle');
+    if (subtitle) {
+        subtitle.textContent = `Modelos destacados para ${appName}`;
+    }
+    
+    // Update section title
+    const pbAcTitle = document.getElementById('pbAcTitle');
+    if (pbAcTitle) {
+        pbAcTitle.textContent = `Modelos para ${appName} - Ciclado Profundo`;
+    }
+}
+
+// Reset titles to default
+function resetTitles() {
+    const subtitle = document.getElementById('pageSubtitle');
+    if (subtitle) {
+        subtitle.textContent = 'Baterías de ciclado profundo para aplicaciones recreativas y comerciales';
+    }
+    
+    const pbAcTitle = document.getElementById('pbAcTitle');
+    if (pbAcTitle) {
+        pbAcTitle.textContent = 'Modelos Destacados - Ciclado Profundo Pb-Ac';
     }
 }
 
 // Render filtered cards based on application
 function renderFilteredCards(filterHash) {
+    if (!categoryData || !categoryData.types) return;
+    
     // Normalize the hash to match application field
     const filterText = normalizeFilterText(filterHash);
     
     // Filter Pb-Ac products
-    if (pbAcData && pbAcData.data) {
-        const filteredPbAc = pbAcData.data.filter(product => 
+    if (categoryData.types['pb-ac'] && categoryData.types['pb-ac'].data) {
+        const filteredPbAc = categoryData.types['pb-ac'].data.filter(product => 
             matchesFilter(product.aplicacion, filterText)
         );
         renderCards('pbAcCardsContainer', filteredPbAc);
+    }
+}
+
+// Render all cards without filter
+function renderAllCards() {
+    if (!categoryData || !categoryData.types) return;
+    
+    // Show first 4 Pb-Ac products
+    if (categoryData.types['pb-ac'] && categoryData.types['pb-ac'].data) {
+        const featured = categoryData.types['pb-ac'].data.slice(0, 4);
+        renderCards('pbAcCardsContainer', featured);
     }
 }
 
@@ -77,17 +132,6 @@ function matchesFilter(aplicacion, filterPatterns) {
     return filterPatterns.some(pattern => 
         lowerAplicacion.includes(pattern.toLowerCase())
     );
-}
-
-// Render Pb-Ac product cards
-function renderPbAcCards() {
-    if (!pbAcData || !pbAcData.data || pbAcData.data.length === 0) {
-        return;
-    }
-    
-    // Show only first 4 products as featured
-    const featuredProducts = pbAcData.data.slice(0, 4);
-    renderCards('pbAcCardsContainer', featuredProducts);
 }
 
 // Render cards to a container

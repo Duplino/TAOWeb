@@ -2,8 +2,7 @@
 // Loads both Pb-Ac and Ion Li estacionaria battery data and renders cards
 // Supports filtering by application via URL hash
 
-let ionLiData = null;
-let pbAcData = null;
+let categoryData = null;
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -16,16 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load battery data from JSON files
 async function loadBatteryData() {
     try {
-        // Load Pb-Ac data
-        const pbAcResponse = await fetch('../../data/estacionarias-pb-ac.json');
-        if (pbAcResponse.ok) {
-            pbAcData = await pbAcResponse.json();
-        }
-        
-        // Load Ion Li data
-        const ionLiResponse = await fetch('../../data/estacionarias-ion-li.json');
-        if (ionLiResponse.ok) {
-            ionLiData = await ionLiResponse.json();
+        // Load consolidated estacionaria data
+        const response = await fetch('../../data/estacionaria.json');
+        if (response.ok) {
+            categoryData = await response.json();
         }
         
         // Initial render or filter based on hash
@@ -42,32 +35,101 @@ function handleHashChange() {
     if (hash) {
         // Filter products by application matching the hash
         renderFilteredCards(hash);
+        // Update page title
+        updateFilteredTitle(hash);
     } else {
         // Show all products
-        renderPbAcCards();
-        renderIonLiCards();
+        renderAllCards();
+        // Reset titles
+        resetTitles();
+    }
+}
+
+// Update page title when filtering
+function updateFilteredTitle(filterHash) {
+    const applicationNames = {
+        'sistemas-ups': 'Sistemas UPS',
+        'telecomunicaciones': 'Telecomunicaciones',
+        'energia-solar': 'Sistemas de Energía Solar',
+        'centros-datos': 'Centros de Datos'
+    };
+    
+    const appName = applicationNames[filterHash] || filterHash.replace(/-/g, ' ');
+    
+    // Update subtitle
+    const subtitle = document.getElementById('pageSubtitle');
+    if (subtitle) {
+        subtitle.textContent = `Modelos destacados para ${appName}`;
+    }
+    
+    // Update section titles
+    const ionLiTitle = document.getElementById('ionLiTitle');
+    if (ionLiTitle) {
+        ionLiTitle.textContent = `Modelos para ${appName} - Estacionarias Pb-Ac`;
+    }
+    
+    const pbAcTitle = document.getElementById('pbAcTitle');
+    if (pbAcTitle) {
+        pbAcTitle.textContent = `Modelos para ${appName} - Estacionarias Ion Li`;
+    }
+}
+
+// Reset titles to default
+function resetTitles() {
+    const subtitle = document.getElementById('pageSubtitle');
+    if (subtitle) {
+        subtitle.textContent = 'Soluciones de respaldo energético para sistemas críticos';
+    }
+    
+    const ionLiTitle = document.getElementById('ionLiTitle');
+    if (ionLiTitle) {
+        ionLiTitle.textContent = 'Modelos Destacados - Estacionarias Pb-Ac';
+    }
+    
+    const pbAcTitle = document.getElementById('pbAcTitle');
+    if (pbAcTitle) {
+        pbAcTitle.textContent = 'Modelos Destacados - Estacionarias Ion Li';
     }
 }
 
 // Render filtered cards based on application
 function renderFilteredCards(filterHash) {
+    if (!categoryData || !categoryData.types) return;
+    
     // Normalize the hash to match application field
     const filterText = normalizeFilterText(filterHash);
     
     // Filter Pb-Ac products
-    if (pbAcData && pbAcData.data) {
-        const filteredPbAc = pbAcData.data.filter(product => 
+    if (categoryData.types['pb-ac'] && categoryData.types['pb-ac'].data) {
+        const filteredPbAc = categoryData.types['pb-ac'].data.filter(product => 
             matchesFilter(product.aplicacion, filterText)
         );
-        renderCards('pbAcCardsContainer', filteredPbAc, 'pb-ac');
+        renderCards('ionLiCardsContainer', filteredPbAc, 'pb-ac');
     }
     
     // Filter Ion Li products
-    if (ionLiData && ionLiData.data) {
-        const filteredIonLi = ionLiData.data.filter(product => 
+    if (categoryData.types['ion-li'] && categoryData.types['ion-li'].data) {
+        const filteredIonLi = categoryData.types['ion-li'].data.filter(product => 
             matchesFilter(product.aplicacion, filterText)
         );
-        renderCards('ionLiCardsContainer', filteredIonLi, 'ion-li');
+        renderCards('pbAcCardsContainer', filteredIonLi, 'ion-li');
+    }
+}
+
+// Render all cards without filter
+function renderAllCards() {
+    if (!categoryData || !categoryData.types) return;
+    
+    // Show first 3 Pb-Ac products
+    if (categoryData.types['pb-ac'] && categoryData.types['pb-ac'].data) {
+        const featured = categoryData.types['pb-ac'].data.slice(0, 3);
+        renderCards('ionLiCardsContainer', featured, 'pb-ac');
+    }
+    
+    // Show first 3 Ion Li products
+    if (categoryData.types['ion-li'] && categoryData.types['ion-li'].data) {
+        const featured = categoryData.types['ion-li'].data.slice(0, 3);
+        renderCards('pbAcCardsContainer', featured, 'ion-li');
     }
 }
 
@@ -92,28 +154,6 @@ function matchesFilter(aplicacion, filterPatterns) {
     return filterPatterns.some(pattern => 
         lowerAplicacion.includes(pattern.toLowerCase())
     );
-}
-
-// Render Pb-Ac product cards
-function renderPbAcCards() {
-    if (!pbAcData || !pbAcData.data || pbAcData.data.length === 0) {
-        return;
-    }
-    
-    // Show only first 3 products as featured
-    const featuredProducts = pbAcData.data.slice(0, 3);
-    renderCards('pbAcCardsContainer', featuredProducts, 'pb-ac');
-}
-
-// Render Ion Li product cards
-function renderIonLiCards() {
-    if (!ionLiData || !ionLiData.data || ionLiData.data.length === 0) {
-        return;
-    }
-    
-    // Show only first 3 products as featured
-    const featuredProducts = ionLiData.data.slice(0, 3);
-    renderCards('ionLiCardsContainer', featuredProducts, 'ion-li');
 }
 
 // Render cards to a container

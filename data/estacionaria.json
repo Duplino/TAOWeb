@@ -1,0 +1,374 @@
+{
+  "category": "estacionaria",
+  "types": {
+    "ion-li": {
+      "type": "ion-li",
+      "columns": [
+        {
+          "key": "modelo",
+          "label": "Modelo"
+        },
+        {
+          "key": "voltaje",
+          "label": "Voltaje"
+        },
+        {
+          "key": "capacidad",
+          "label": "Capacidad (Ah)"
+        },
+        {
+          "key": "energia",
+          "label": "Energía (kWh)"
+        },
+        {
+          "key": "peso",
+          "label": "Peso (kg)"
+        },
+        {
+          "key": "aplicacion",
+          "label": "Aplicación"
+        }
+      ],
+      "data": [
+        {
+          "modelo": "LI-EST-48V-100AH",
+          "voltaje": "48V",
+          "capacidad": "100Ah",
+          "energia": "4.8",
+          "peso": "52",
+          "aplicacion": "UPS, Telecomunicaciones",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=LI-EST-48V-100AH"
+          ],
+          "specifications": {
+            "Tipo": "LiFePO4 (LFP)",
+            "Voltaje Nominal": "48V (51.2V)",
+            "Capacidad": "100Ah",
+            "Energía": "4.8 kWh",
+            "Peso": "52 kg",
+            "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+            "Temperatura de Operación": "-10°C a 45°C",
+            "Aplicación": "UPS, Telecomunicaciones",
+            "Rack Mount": "19\" compatible",
+            "Comunicación": "RS485/CAN",
+            "Certificaciones": "UL, CE, UN38.3"
+          },
+          "caracteristicas": [
+            "Tecnología LiFePO4 (LFP)",
+            "Rack mount 19\" compatible",
+            "BMS con comunicación RS485/CAN",
+            "Diseño modular expandible",
+            "Eficiencia 96%",
+            "Certificaciones UL, CE, UN38.3"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-48V-100AH.pdf"
+        },
+        {
+          "modelo": "LI-EST-48V-200AH",
+          "voltaje": "48V",
+          "capacidad": "200Ah",
+          "energia": "9.6",
+          "peso": "95",
+          "aplicacion": "Data Centers, UPS críticos",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=LI-EST-48V-200AH"
+          ],
+          "specifications": {
+            "Tipo": "LiFePO4 (LFP)",
+            "Voltaje Nominal": "48V (51.2V)",
+            "Capacidad": "200Ah",
+            "Energía": "9.6 kWh",
+            "Peso": "95 kg",
+            "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+            "Temperatura de Operación": "-10°C a 45°C",
+            "Aplicación": "Data Centers, UPS críticos",
+            "Paralelización": "Hasta 16 unidades",
+            "Garantía": "10 años",
+            "Comunicación": "WiFi/4G, SNMP"
+          },
+          "caracteristicas": [
+            "Alta densidad energética",
+            "Sistema de enfriamiento pasivo",
+            "Monitoreo remoto vía WiFi/4G",
+            "Protocolo SNMP integrado",
+            "Paralelización hasta 16 unidades",
+            "Garantía de 10 años"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-48V-200AH.pdf"
+        },
+        {
+          "modelo": "LI-EST-384V-150AH",
+          "voltaje": "384V",
+          "capacidad": "150Ah",
+          "energia": "57.6",
+          "peso": "480",
+          "aplicacion": "Almacenamiento solar comercial",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=LI-EST-384V-150AH"
+          ],
+          "specifications": {
+            "Tipo": "LiFePO4 (LFP)",
+            "Voltaje Nominal": "384V",
+            "Capacidad": "150Ah",
+            "Energía": "57.6 kWh",
+            "Peso": "480 kg",
+            "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+            "Temperatura de Operación": "-10°C a 45°C",
+            "Aplicación": "Almacenamiento solar comercial",
+            "Inversor": "Híbrido compatible",
+            "Modo Isla": "Integrado"
+          },
+          "caracteristicas": [
+            "Sistema de alta tensión",
+            "Inversor híbrido compatible",
+            "Dashboard de gestión energética",
+            "Peak shaving y arbitraje",
+            "Modo isla integrado",
+            "6000+ ciclos garantizados"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-384V-150AH.pdf"
+        },
+        {
+          "modelo": "LI-EST-51.2V-280AH",
+          "voltaje": "51.2V",
+          "capacidad": "280Ah",
+          "energia": "14.3",
+          "peso": "135",
+          "aplicacion": "Microgrids, ESS industrial",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=LI-EST-51.2V-280AH"
+          ],
+          "specifications": {
+            "Tipo": "LiFePO4 (LFP)",
+            "Voltaje Nominal": "51.2V",
+            "Capacidad": "280Ah",
+            "Energía": "14.3 kWh",
+            "Peso": "135 kg",
+            "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+            "Temperatura de Operación": "-20°C a 55°C",
+            "Aplicación": "Microgrids, ESS industrial",
+            "Protección": "IP65",
+            "Escalabilidad": "Hasta 1 MWh"
+          },
+          "caracteristicas": [
+            "Diseño de gabinete outdoor",
+            "Protección IP65",
+            "Rango térmico extendido (-20°C a 55°C)",
+            "Sistema antiincendios integrado",
+            "Escalable hasta 1 MWh",
+            "Software de optimización incluido"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-51.2V-280AH.pdf"
+        },
+        {
+          "modelo": "LI-EST-48V-50AH",
+          "voltaje": "48V",
+          "capacidad": "50Ah",
+          "energia": "2.4",
+          "peso": "28",
+          "aplicacion": "Telecom, Small UPS",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=LI-EST-48V-50AH"
+          ],
+          "specifications": {
+            "Tipo": "LiFePO4 (LFP)",
+            "Voltaje Nominal": "48V (51.2V)",
+            "Capacidad": "50Ah",
+            "Energía": "2.4 kWh",
+            "Peso": "28 kg",
+            "Ciclos de Vida": "6000+ ciclos @ 80% DOD",
+            "Temperatura de Operación": "-10°C a 45°C",
+            "Aplicación": "Telecom, Small UPS",
+            "Display": "LCD integrado",
+            "Bluetooth": "Sí"
+          },
+          "caracteristicas": [
+            "Ultra compacto y ligero",
+            "Instalación plug-and-play",
+            "Display LCD con información completa",
+            "Bluetooth integrado",
+            "Carga solar MPPT compatible",
+            "Precio competitivo"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/LI-EST-48V-50AH.pdf"
+        }
+      ]
+    },
+    "pb-ac": {
+      "type": "pb-ac",
+      "columns": [
+        {
+          "key": "modelo",
+          "label": "Modelo"
+        },
+        {
+          "key": "tipo",
+          "label": "Tipo"
+        },
+        {
+          "key": "voltaje",
+          "label": "Voltaje"
+        },
+        {
+          "key": "capacidad",
+          "label": "Capacidad (Ah @ C10)"
+        },
+        {
+          "key": "vidaFlotante",
+          "label": "Vida Flotante (años)"
+        },
+        {
+          "key": "aplicacion",
+          "label": "Aplicación"
+        }
+      ],
+      "data": [
+        {
+          "modelo": "EST-AGM-12V-100AH",
+          "tipo": "AGM",
+          "voltaje": "12V",
+          "capacidad": "100Ah",
+          "vidaFlotante": "10",
+          "aplicacion": "UPS, Telecomunicaciones",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=EST-AGM-12V-100AH"
+          ],
+          "specifications": {
+            "Tipo": "VRLA AGM",
+            "Voltaje Nominal": "12V",
+            "Capacidad (C10)": "100Ah",
+            "Vida Flotante": "10 años @ 25°C",
+            "Temperatura de Operación": "-20°C a 50°C",
+            "Aplicación": "UPS, Telecomunicaciones",
+            "Autodescarga": "< 2% por mes",
+            "Certificaciones": "ISO 9001"
+          },
+          "caracteristicas": [
+            "Tecnología VRLA AGM",
+            "Muy baja tasa de autodescarga",
+            "Excelente recuperación de descarga",
+            "Montaje en rack disponible",
+            "Certificación ISO 9001"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/EST-AGM-12V-100AH.pdf"
+        },
+        {
+          "modelo": "EST-GEL-12V-200AH",
+          "tipo": "Gel",
+          "voltaje": "12V",
+          "capacidad": "200Ah",
+          "vidaFlotante": "15",
+          "aplicacion": "Telecomunicaciones, Data Centers",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=EST-GEL-12V-200AH"
+          ],
+          "specifications": {
+            "Tipo": "Gel VRLA",
+            "Voltaje Nominal": "12V",
+            "Capacidad (C10)": "200Ah",
+            "Vida Flotante": "15 años @ 25°C",
+            "Temperatura de Operación": "-20°C a 55°C",
+            "Aplicación": "Telecomunicaciones, Data Centers",
+            "Terminal": "Frontal",
+            "Certificaciones": "ISO, CE, UL"
+          },
+          "caracteristicas": [
+            "Larga vida útil en flotación",
+            "Tecnología Gel avanzada",
+            "Resistente a temperaturas extremas",
+            "Sin emisiones de gases",
+            "Conectores tipo terminal frontal"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/EST-GEL-12V-200AH.pdf"
+        },
+        {
+          "modelo": "EST-AGM-2V-1000AH",
+          "tipo": "AGM",
+          "voltaje": "2V",
+          "capacidad": "1000Ah",
+          "vidaFlotante": "12",
+          "aplicacion": "Bancos de baterías grandes",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=EST-AGM-2V-1000AH"
+          ],
+          "specifications": {
+            "Tipo": "VRLA AGM",
+            "Voltaje Nominal": "2V",
+            "Capacidad (C10)": "1000Ah",
+            "Vida Flotante": "12 años @ 25°C",
+            "Temperatura de Operación": "-20°C a 50°C",
+            "Aplicación": "Bancos de baterías grandes",
+            "Diseño": "Front Access",
+            "Alta corriente": "Sí"
+          },
+          "caracteristicas": [
+            "Celda individual de 2V",
+            "Diseño Front Access",
+            "Alta corriente de descarga",
+            "Ideal para sistemas bancarios",
+            "Mantenimiento mínimo"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/EST-AGM-2V-1000AH.pdf"
+        },
+        {
+          "modelo": "EST-GEL-12V-150AH",
+          "tipo": "Gel",
+          "voltaje": "12V",
+          "capacidad": "150Ah",
+          "vidaFlotante": "12",
+          "aplicacion": "UPS, Sistemas críticos",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=EST-GEL-12V-150AH"
+          ],
+          "specifications": {
+            "Tipo": "Gel VRLA",
+            "Voltaje Nominal": "12V",
+            "Capacidad (C10)": "150Ah",
+            "Vida Flotante": "12 años @ 25°C",
+            "Temperatura de Operación": "-20°C a 55°C",
+            "Aplicación": "UPS, Sistemas críticos",
+            "Diseño": "Modular",
+            "Garantía": "Extendida disponible"
+          },
+          "caracteristicas": [
+            "Tecnología de gel estabilizado",
+            "Baja impedancia interna",
+            "Excelente rendimiento a baja temperatura",
+            "Diseño modular",
+            "Garantía extendida disponible"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/EST-GEL-12V-150AH.pdf"
+        },
+        {
+          "modelo": "EST-AGM-12V-65AH",
+          "tipo": "AGM",
+          "voltaje": "12V",
+          "capacidad": "65Ah",
+          "vidaFlotante": "8",
+          "aplicacion": "Alarmas, Iluminación emergencia",
+          "images": [
+            "https://via.placeholder.com/800x600/333/fff?text=EST-AGM-12V-65AH"
+          ],
+          "specifications": {
+            "Tipo": "VRLA AGM",
+            "Voltaje Nominal": "12V",
+            "Capacidad (C10)": "65Ah",
+            "Vida Flotante": "8 años @ 25°C",
+            "Temperatura de Operación": "-20°C a 50°C",
+            "Aplicación": "Alarmas, Iluminación emergencia",
+            "Montaje": "Múltiples posiciones",
+            "Relación": "Precio-calidad óptima"
+          },
+          "caracteristicas": [
+            "Compacta y eficiente",
+            "Rápida instalación",
+            "Sellado hermético",
+            "Múltiples posiciones de montaje",
+            "Relación precio-calidad óptima"
+          ],
+          "pdfUrl": "/pdfs/fichas-tecnicas/EST-AGM-12V-65AH.pdf"
+        }
+      ]
+    }
+  }
+}
