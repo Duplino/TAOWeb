@@ -1,8 +1,8 @@
 // Traccion Index Page JavaScript
-// Loads both Ion Li and Pb-Ac battery data and renders cards
+// Loads battery data and renders cards with carousel support
 // Supports filtering by application via URL hash
 
-let categoryData = null;
+let allBatteries = [];
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,13 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('hashchange', handleHashChange);
 });
 
-// Load battery data from JSON files
+// Load battery data from JSON file
 async function loadBatteryData() {
     try {
-        // Load consolidated traccion data
         const response = await fetch('../../data/traccion.json');
         if (response.ok) {
-            categoryData = await response.json();
+            allBatteries = await response.json();
         }
         
         // Initial render or filter based on hash
@@ -104,48 +103,39 @@ function resetTitles() {
 
 // Render filtered cards based on application
 function renderFilteredCards(filterHash) {
-    if (!categoryData || !categoryData.types) return;
+    if (!allBatteries.length) return;
     
     // Normalize the hash to match application field
     const filterText = normalizeFilterText(filterHash);
     
     // Filter Ion Li products
-    if (categoryData.types['ion-li'] && categoryData.types['ion-li'].data) {
-        const filteredIonLi = categoryData.types['ion-li'].data.filter(product => 
-            matchesFilter(product.aplicacion, filterText)
-        );
-        renderCards('ionLiCardsContainer', filteredIonLi, 'ion-li');
-    }
+    const filteredIonLi = allBatteries.filter(product => 
+        product.type === 'ion-li' && matchesFilter(product.aplicacion, filterText)
+    );
     
     // Filter Pb-Ac products
-    if (categoryData.types['pb-ac'] && categoryData.types['pb-ac'].data) {
-        const filteredPbAc = categoryData.types['pb-ac'].data.filter(product => 
-            matchesFilter(product.aplicacion, filterText)
-        );
-        renderCards('pbAcCardsContainer', filteredPbAc, 'pb-ac');
-    }
+    const filteredPbAc = allBatteries.filter(product => 
+        product.type === 'pb-ac' && matchesFilter(product.aplicacion, filterText)
+    );
+    
+    renderCards('ionLiCardsContainer', filteredIonLi, 'ion-li');
+    renderCards('pbAcCardsContainer', filteredPbAc, 'pb-ac');
 }
 
 // Render all cards without filter
 function renderAllCards() {
-    if (!categoryData || !categoryData.types) return;
+    if (!allBatteries.length) return;
     
-    // Show first 3 Ion Li products
-    if (categoryData.types['ion-li'] && categoryData.types['ion-li'].data) {
-        const featuredIonLi = categoryData.types['ion-li'].data.slice(0, 3);
-        renderCards('ionLiCardsContainer', featuredIonLi, 'ion-li');
-    }
+    // Filter Ion Li and Pb-Ac products
+    const ionLiProducts = allBatteries.filter(p => p.type === 'ion-li');
+    const pbAcProducts = allBatteries.filter(p => p.type === 'pb-ac');
     
-    // Show first 3 Pb-Ac products
-    if (categoryData.types['pb-ac'] && categoryData.types['pb-ac'].data) {
-        const featuredPbAc = categoryData.types['pb-ac'].data.slice(0, 3);
-        renderCards('pbAcCardsContainer', featuredPbAc, 'pb-ac');
-    }
+    renderCards('ionLiCardsContainer', ionLiProducts, 'ion-li');
+    renderCards('pbAcCardsContainer', pbAcProducts, 'pb-ac');
 }
 
 // Normalize filter text for matching
 function normalizeFilterText(hash) {
-    // Convert hash like "montacargas-electricos" to match patterns
     const patterns = {
         'montacargas-electricos': ['montacargas', 'eléctricos'],
         'montacargas-3-ruedas': ['montacargas', '3 ruedas'],
@@ -176,7 +166,7 @@ function matchesFilter(aplicacion, filterPatterns) {
     );
 }
 
-// Render cards to a container
+// Render cards to a container (with carousel if > 3 items)
 function renderCards(containerId, products, type) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -188,10 +178,84 @@ function renderCards(containerId, products, type) {
         return;
     }
     
-    products.forEach((product) => {
-        const card = createProductCard(product, type);
-        container.appendChild(card);
-    });
+    // Use carousel if more than 3 products
+    if (products.length > 3) {
+        renderCarousel(container, products, type);
+    } else {
+        // Render as grid
+        products.forEach((product) => {
+            const card = createProductCard(product, type);
+            container.appendChild(card);
+        });
+    }
+}
+
+// Create carousel HTML
+function renderCarousel(container, products, type) {
+    const carouselId = `carousel-${type}-${Date.now()}`;
+    
+    const carousel = document.createElement('div');
+    carousel.id = carouselId;
+    carousel.className = 'carousel slide';
+    carousel.setAttribute('data-bs-ride', 'carousel');
+    
+    // Carousel indicators
+    const indicators = document.createElement('div');
+    indicators.className = 'carousel-indicators';
+    const numSlides = Math.ceil(products.length / 3);
+    for (let i = 0; i < numSlides; i++) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.setAttribute('data-bs-target', `#${carouselId}`);
+        button.setAttribute('data-bs-slide-to', i);
+        if (i === 0) button.className = 'active';
+        indicators.appendChild(button);
+    }
+    carousel.appendChild(indicators);
+    
+    // Carousel inner
+    const carouselInner = document.createElement('div');
+    carouselInner.className = 'carousel-inner';
+    
+    // Create slides (3 items per slide on desktop, 1 on mobile)
+    for (let i = 0; i < products.length; i += 3) {
+        const slide = document.createElement('div');
+        slide.className = i === 0 ? 'carousel-item active' : 'carousel-item';
+        
+        const row = document.createElement('div');
+        row.className = 'row g-4';
+        
+        // Add up to 3 products per slide
+        const slideProducts = products.slice(i, i + 3);
+        slideProducts.forEach(product => {
+            const card = createProductCard(product, type);
+            row.appendChild(card);
+        });
+        
+        slide.appendChild(row);
+        carouselInner.appendChild(slide);
+    }
+    carousel.appendChild(carouselInner);
+    
+    // Carousel controls
+    const prevButton = document.createElement('button');
+    prevButton.className = 'carousel-control-prev';
+    prevButton.type = 'button';
+    prevButton.setAttribute('data-bs-target', `#${carouselId}`);
+    prevButton.setAttribute('data-bs-slide', 'prev');
+    prevButton.innerHTML = '<span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span>';
+    
+    const nextButton = document.createElement('button');
+    nextButton.className = 'carousel-control-next';
+    nextButton.type = 'button';
+    nextButton.setAttribute('data-bs-target', `#${carouselId}`);
+    nextButton.setAttribute('data-bs-slide', 'next');
+    nextButton.innerHTML = '<span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span>';
+    
+    carousel.appendChild(prevButton);
+    carousel.appendChild(nextButton);
+    
+    container.appendChild(carousel);
 }
 
 // Create a product card
@@ -199,67 +263,61 @@ function createProductCard(product, type) {
     const col = document.createElement('div');
     col.className = 'col-md-4';
     
-    // Get appropriate specs based on battery type
-    const specs = type === 'ion-li' ? `
-        <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted small">Voltaje:</span>
-            <span class="fw-bold small">${product.voltaje}</span>
-        </div>
-        <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted small">Capacidad:</span>
-            <span class="fw-bold small">${product.capacidad}</span>
-        </div>
-        <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted small">Energía:</span>
-            <span class="fw-bold small">${product.energia} kWh</span>
-        </div>
-    ` : `
-        <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted small">Voltaje:</span>
-            <span class="fw-bold small">${product.voltaje}</span>
-        </div>
-        <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted small">Capacidad:</span>
-            <span class="fw-bold small">${product.capacidad}</span>
-        </div>
-        <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted small">Peso:</span>
-            <span class="fw-bold small">${product.peso} kg</span>
-        </div>
-    `;
+    const card = document.createElement('div');
+    card.className = 'card h-100 shadow-sm border-0';
+    card.style.cursor = 'pointer';
     
-    // Get product image or placeholder
-    const productImage = product.images && product.images.length > 0 
-        ? product.images[0] 
-        : 'https://via.placeholder.com/400x300/333/fff?text=' + encodeURIComponent(product.modelo);
+    // Card Image
+    const img = document.createElement('img');
+    img.src = product.images && product.images.length > 0 ? product.images[0] : 'https://placehold.co/400x300/333/fff/fff?text=No+Image';
+    img.className = 'card-img-top';
+    img.alt = product.modelo;
+    card.appendChild(img);
     
-    // Create card HTML
-    col.innerHTML = `
-        <div class="card h-100 border-0 shadow-sm product-card">
-            <div class="card-body p-0">
-                <!-- Product Image -->
-                <div class="product-card-image" style="background-image: url('${productImage}'); background-size: cover; background-position: center; height: 200px; position: relative;">
-                    ${!product.images || product.images.length === 0 ? '<i class="bi bi-battery-charging" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3rem; color: rgba(255,255,255,0.5);"></i>' : ''}
-                </div>
-                
-                <!-- Product Info -->
-                <div class="p-4">
-                    <h5 class="card-title fw-bold mb-2">${product.modelo}</h5>
-                    <p class="text-muted small mb-3">${product.aplicacion || 'Aplicación Industrial'}</p>
-                    
-                    <!-- Key Specs -->
-                    <div class="mb-3">
-                        ${specs}
-                    </div>
-                    
-                    <!-- Action Button -->
-                    <a href="product.html?category=traccion&type=${type}&modelo=${encodeURIComponent(product.modelo)}" class="btn btn-orange w-100">
-                        <i class="bi bi-eye me-2"></i>Ver Detalles
-                    </a>
-                </div>
-            </div>
-        </div>
-    `;
+    // Card Body
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+    
+    const title = document.createElement('h5');
+    title.className = 'card-title fw-bold';
+    title.textContent = product.modelo;
+    cardBody.appendChild(title);
+    
+    const subtitle = document.createElement('p');
+    subtitle.className = 'card-text text-muted mb-3';
+    subtitle.textContent = product.aplicacion || '';
+    cardBody.appendChild(subtitle);
+    
+    // Specs list
+    const specsList = document.createElement('div');
+    specsList.className = 'mb-3';
+    
+    const specs = [
+        { label: 'Voltaje', value: product.voltaje },
+        { label: 'Capacidad', value: product.capacidad },
+        { label: product.energia ? 'Energía' : 'Peso', value: product.energia ? `${product.energia} kWh` : `${product.peso} kg` }
+    ];
+    
+    specs.forEach(spec => {
+        if (spec.value) {
+            const specItem = document.createElement('div');
+            specItem.className = 'mb-1 small';
+            specItem.innerHTML = `<i class="bi bi-check-circle-fill text-orange me-2"></i><strong>${spec.label}:</strong> ${spec.value}`;
+            specsList.appendChild(specItem);
+        }
+    });
+    
+    cardBody.appendChild(specsList);
+    
+    // Action Button
+    const link = document.createElement('a');
+    link.href = `product.html?category=traccion&type=${type}&modelo=${encodeURIComponent(product.modelo)}`;
+    link.className = 'btn btn-orange w-100';
+    link.textContent = 'Ver Detalles';
+    cardBody.appendChild(link);
+    
+    card.appendChild(cardBody);
+    col.appendChild(card);
     
     return col;
 }

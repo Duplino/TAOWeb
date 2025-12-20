@@ -648,3 +648,43 @@ html {
     font-size: 1.5rem;
     opacity: 0.5;
 }
+
+/* Carousel Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* On mobile, show only 1 item per slide */
+    .carousel-inner .row .col-md-4:not(:first-child) {
+        display: none;
+    }
+    
+    .carousel-inner .row .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Carousel controls styling */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--tao-orange);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.carousel-indicators button {
+    background-color: var(--tao-orange);
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+}
