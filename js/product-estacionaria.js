@@ -63,6 +63,10 @@ function renderProduct(product, params) {
         'estacionaria': 'Baterías Estacionarias'
     };
     
+    // Check if product has multiple images
+    const hasMultipleImages = product.images && product.images.length > 1;
+    const mainImage = product.images && product.images.length > 0 ? product.images[0] : 'https://placehold.co/600x450/333/fff?text=No+Image';
+    
     // Create product HTML
     container.innerHTML = `
         <nav aria-label="breadcrumb" class="mb-4">
@@ -76,9 +80,24 @@ function renderProduct(product, params) {
         
         <div class="row g-5">
             <div class="col-lg-5">
-                <img src="${product.images && product.images.length > 0 ? product.images[0] : 'https://placehold.co/600x450/333/fff/fff?text=No+Image'}" 
+                ${hasMultipleImages ? `
+                <div class="product-gallery">
+                    <div class="product-gallery-main">
+                        <img src="${mainImage}" alt="${product.modelo}" id="mainProductImage">
+                    </div>
+                    <div class="product-gallery-thumbnails">
+                        ${product.images.map((img, index) => `
+                            <div class="product-gallery-thumbnail ${index === 0 ? 'active' : ''}" data-image="${img}">
+                                <img src="${img}" alt="${product.modelo} - Imagen ${index + 1}">
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                ` : `
+                <img src="${mainImage}" 
                      alt="${product.modelo}" 
                      class="img-fluid rounded shadow-sm">
+                `}
             </div>
             <div class="col-lg-7">
                 <h1 class="display-5 fw-bold mb-3">${product.modelo}</h1>
@@ -129,6 +148,33 @@ function renderProduct(product, params) {
     
     // Update page title
     document.title = `${product.modelo} - TAO Power`;
+    
+    // Initialize gallery if multiple images
+    if (hasMultipleImages) {
+        initializeGallery();
+    }
+}
+
+// Initialize product image gallery (MercadoLibre style)
+function initializeGallery() {
+    const mainImage = document.getElementById('mainProductImage');
+    const thumbnails = document.querySelectorAll('.product-gallery-thumbnail');
+    
+    if (!mainImage || !thumbnails.length) return;
+    
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            // Remove active class from all thumbnails
+            thumbnails.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked thumbnail
+            this.classList.add('active');
+            
+            // Update main image
+            const newImageSrc = this.getAttribute('data-image');
+            mainImage.src = newImageSrc;
+        });
+    });
 }
 
 // Show error message
