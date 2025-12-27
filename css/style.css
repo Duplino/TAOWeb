@@ -19,6 +19,15 @@ body {
     color: var(--tao-orange) !important;
 }
 
+/* Border Colors */
+.border-orange {
+    border-color: var(--tao-orange) !important;
+}
+
+.bg-orange {
+    background-color: var(--tao-orange) !important;
+}
+
 /* Buttons */
 .btn-orange {
     background-color: var(--tao-orange);
