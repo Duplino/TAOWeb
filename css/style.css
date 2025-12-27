@@ -120,6 +120,10 @@ body {
     background: linear-gradient(135deg, var(--tao-orange) 0%, var(--tao-orange-hover) 100%);
 }
 
+.bg-gradient-orange-dark {
+    background: linear-gradient(135deg, #cc5200 0%, var(--tao-orange) 100%);
+}
+
 /* Navigation 
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.8);
