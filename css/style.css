@@ -24,6 +24,11 @@ body {
     border-color: var(--tao-orange) !important;
 }
 
+.border-orange-thick {
+    border-color: var(--tao-orange) !important;
+    border-width: 2px !important;
+}
+
 .bg-orange {
     background-color: var(--tao-orange) !important;
 }
