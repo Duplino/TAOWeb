@@ -97,6 +97,16 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
 }
 
+/* Hover Lift Effect for Cards */
+.hover-lift {
+    transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
 .service-icon {
     width: 80px;
     height: 80px;
