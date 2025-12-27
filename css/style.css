@@ -912,3 +912,154 @@ html {
         right: 10px;
     }
 }
+
+/* Scroll Down Button */
+.scroll-down-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 102, 0, 0.2);
+    border: 2px solid var(--tao-orange);
+    border-radius: 50%;
+    color: var(--tao-orange);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+    z-index: 10;
+}
+
+.scroll-down-btn:hover {
+    background-color: var(--tao-orange);
+    color: white;
+    transform: translateX(-50%) scale(1.1);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Logo Slider - Infinite Scroll */
+.logo-slider-wrapper {
+    overflow: hidden;
+    padding: 20px 0;
+    background-color: white;
+}
+
+.logo-slider {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.logo-slide {
+    flex: 0 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-img {
+    height: 80px;
+    width: 150px;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.logo-slide:hover .logo-img {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.logo-slider-wrapper:hover .logo-slider {
+    animation-play-state: paused;
+}
+
+/* Partnership Cards */
+.partnership-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.partnership-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.partnership-number {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--tao-orange) 0%, var(--tao-orange-hover) 100%);
+    border-radius: 50%;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.partnership-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 102, 0, 0.1);
+    border-radius: 50%;
+    color: var(--tao-orange);
+    font-size: 2rem;
+}
+
+.partnership-card:hover .partnership-icon {
+    background: linear-gradient(135deg, var(--tao-orange) 0%, var(--tao-orange-hover) 100%);
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .partnership-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .partnership-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
