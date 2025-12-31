@@ -31,6 +31,11 @@ function handleHashChange() {
 
 function updateFilteredTitle(filterHash) {
     const applicationNames = {
+        'carrito-golf': 'Carrito de Golf',
+        'vehiculo-utilitario': 'Vehículo Utilitario',
+        'remolcador-equipaje': 'Remolcador de Equipaje',
+        'equipos-aeropuerto': 'Equipos de Aeropuerto',
+        'plataforma-elevacion': 'Plataforma de Elevación',
         'solar': 'Sistemas Solares',
         'rv': 'RV y Autocaravanas',
         'nautica': 'Aplicaciones Náuticas',
@@ -39,6 +44,10 @@ function updateFilteredTitle(filterHash) {
     };
     
     const appName = applicationNames[filterHash] || filterHash.replace(/-/g, ' ');
+    
+    // Update breadcrumb
+    updateBreadcrumb(appName);
+    
     const subtitle = document.getElementById('pageSubtitle');
     if (subtitle) {
         subtitle.textContent = `Modelos destacados para ${appName}`;
@@ -51,6 +60,9 @@ function updateFilteredTitle(filterHash) {
 }
 
 function resetTitles() {
+    // Reset breadcrumb to default (remove subsection)
+    resetBreadcrumb();
+    
     const subtitle = document.getElementById('pageSubtitle');
     if (subtitle) {
         subtitle.textContent = 'Baterías de ciclado profundo para aplicaciones recreativas y comerciales';
@@ -59,6 +71,53 @@ function resetTitles() {
     const pbAcTitle = document.getElementById('pbAcTitle');
     if (pbAcTitle) {
         pbAcTitle.textContent = 'Modelos Destacados - Ciclado Profundo Pb-Ac';
+    }
+}
+
+// Update breadcrumb to add subsection
+function updateBreadcrumb(subsectionName) {
+    const breadcrumb = document.querySelector('.breadcrumb');
+    if (!breadcrumb) return;
+    
+    // Remove any existing subsection item
+    const existingSubsection = breadcrumb.querySelector('.breadcrumb-item-subsection');
+    if (existingSubsection) {
+        existingSubsection.remove();
+    }
+    
+    // Update the "Ciclado Profundo" item to be a link instead of active
+    const cicladoItem = breadcrumb.querySelector('.breadcrumb-item:last-child');
+    if (cicladoItem && cicladoItem.classList.contains('active')) {
+        cicladoItem.classList.remove('active', 'text-white');
+        cicladoItem.removeAttribute('aria-current');
+        cicladoItem.innerHTML = `<a href="index.html" class="text-white-50">Ciclado Profundo</a>`;
+    }
+    
+    // Add new subsection breadcrumb item
+    const subsectionItem = document.createElement('li');
+    subsectionItem.className = 'breadcrumb-item breadcrumb-item-subsection active text-white';
+    subsectionItem.setAttribute('aria-current', 'page');
+    subsectionItem.textContent = subsectionName;
+    breadcrumb.appendChild(subsectionItem);
+}
+
+// Reset breadcrumb to default state
+function resetBreadcrumb() {
+    const breadcrumb = document.querySelector('.breadcrumb');
+    if (!breadcrumb) return;
+    
+    // Remove subsection item if exists
+    const existingSubsection = breadcrumb.querySelector('.breadcrumb-item-subsection');
+    if (existingSubsection) {
+        existingSubsection.remove();
+    }
+    
+    // Restore "Ciclado Profundo" item to active state
+    const cicladoItem = breadcrumb.querySelector('.breadcrumb-item:last-child');
+    if (cicladoItem && !cicladoItem.classList.contains('active')) {
+        cicladoItem.classList.add('active', 'text-white');
+        cicladoItem.setAttribute('aria-current', 'page');
+        cicladoItem.textContent = 'Ciclado Profundo';
     }
 }
 

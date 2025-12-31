@@ -38,6 +38,10 @@ function updateFilteredTitle(filterHash) {
     };
     
     const appName = applicationNames[filterHash] || filterHash.replace(/-/g, ' ');
+    
+    // Update breadcrumb
+    updateBreadcrumb(appName);
+    
     const subtitle = document.getElementById('pageSubtitle');
     if (subtitle) {
         subtitle.textContent = `Modelos destacados para ${appName}`;
@@ -55,6 +59,9 @@ function updateFilteredTitle(filterHash) {
 }
 
 function resetTitles() {
+    // Reset breadcrumb to default (remove subsection)
+    resetBreadcrumb();
+    
     const subtitle = document.getElementById('pageSubtitle');
     if (subtitle) {
         subtitle.textContent = 'Baterías estacionarias para respaldo de energía y sistemas críticos';
@@ -68,6 +75,53 @@ function resetTitles() {
     const pbAcTitle = document.getElementById('pbAcTitle');
     if (pbAcTitle) {
         pbAcTitle.textContent = 'Modelos Destacados - Estacionaria Pb-Ac';
+    }
+}
+
+// Update breadcrumb to add subsection
+function updateBreadcrumb(subsectionName) {
+    const breadcrumb = document.querySelector('.breadcrumb');
+    if (!breadcrumb) return;
+    
+    // Remove any existing subsection item
+    const existingSubsection = breadcrumb.querySelector('.breadcrumb-item-subsection');
+    if (existingSubsection) {
+        existingSubsection.remove();
+    }
+    
+    // Update the "Estacionarias" item to be a link instead of active
+    const estacionariaItem = breadcrumb.querySelector('.breadcrumb-item:last-child');
+    if (estacionariaItem && estacionariaItem.classList.contains('active')) {
+        estacionariaItem.classList.remove('active', 'text-white');
+        estacionariaItem.removeAttribute('aria-current');
+        estacionariaItem.innerHTML = `<a href="index.html" class="text-white-50">Estacionarias</a>`;
+    }
+    
+    // Add new subsection breadcrumb item
+    const subsectionItem = document.createElement('li');
+    subsectionItem.className = 'breadcrumb-item breadcrumb-item-subsection active text-white';
+    subsectionItem.setAttribute('aria-current', 'page');
+    subsectionItem.textContent = subsectionName;
+    breadcrumb.appendChild(subsectionItem);
+}
+
+// Reset breadcrumb to default state
+function resetBreadcrumb() {
+    const breadcrumb = document.querySelector('.breadcrumb');
+    if (!breadcrumb) return;
+    
+    // Remove subsection item if exists
+    const existingSubsection = breadcrumb.querySelector('.breadcrumb-item-subsection');
+    if (existingSubsection) {
+        existingSubsection.remove();
+    }
+    
+    // Restore "Estacionarias" item to active state
+    const estacionariaItem = breadcrumb.querySelector('.breadcrumb-item:last-child');
+    if (estacionariaItem && !estacionariaItem.classList.contains('active')) {
+        estacionariaItem.classList.add('active', 'text-white');
+        estacionariaItem.setAttribute('aria-current', 'page');
+        estacionariaItem.textContent = 'Estacionarias';
     }
 }
 
