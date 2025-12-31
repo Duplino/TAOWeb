@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const formMessage = document.getElementById('formMessage');
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.innerHTML;
+            const recaptchaKey = contactForm.dataset.recaptchaKey || '6Le0CzgsAAAAAOCgxeAI5gaWTGkjat-5Bbn0cXZP';
             
             // Disable submit button and show loading state
             submitButton.disabled = true;
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Execute reCAPTCHA v3
             grecaptcha.ready(function() {
-                grecaptcha.execute('6Le0CzgsAAAAAOCgxeAI5gaWTGkjat-5Bbn0cXZP', {action: 'submit'}).then(function(token) {
+                grecaptcha.execute(recaptchaKey, {action: 'submit'}).then(function(token) {
                     // Add reCAPTCHA token to form data
                     formData.recaptcha_token = token;
                     

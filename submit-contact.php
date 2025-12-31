@@ -65,10 +65,25 @@ $recaptcha_options = [
 ];
 
 $recaptcha_context = stream_context_create($recaptcha_options);
-$recaptcha_result = file_get_contents($recaptcha_url, false, $recaptcha_context);
+$recaptcha_result = @file_get_contents($recaptcha_url, false, $recaptcha_context);
+
+if ($recaptcha_result === false) {
+    error_log('Failed to verify reCAPTCHA: Unable to connect to Google reCAPTCHA API');
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Error en la verificación de seguridad']);
+    exit;
+}
+
 $recaptcha_json = json_decode($recaptcha_result);
 
-if (!$recaptcha_json->success || $recaptcha_json->score < 0.5) {
+if (json_last_error() !== JSON_ERROR_NONE) {
+    error_log('Failed to verify reCAPTCHA: Invalid JSON response - ' . json_last_error_msg());
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Error en la verificación de seguridad']);
+    exit;
+}
+
+if (!$recaptcha_json || !isset($recaptcha_json->success) || !$recaptcha_json->success || !isset($recaptcha_json->score) || $recaptcha_json->score < 0.5) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Verificación de seguridad fallida']);
     exit;
@@ -76,9 +91,18 @@ if (!$recaptcha_json->success || $recaptcha_json->score < 0.5) {
 
 // Get client IP address
 $ip_address = $_SERVER['REMOTE_ADDR'];
+
+// Check for forwarded IP (only from trusted proxies in production)
 if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-    $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
-} elseif (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    // Take the first IP from the list (the original client IP)
+    $forwarded_ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+    $forwarded_ip = trim($forwarded_ips[0]);
+    
+    // Validate the IP address format
+    if (filter_var($forwarded_ip, FILTER_VALIDATE_IP)) {
+        $ip_address = $forwarded_ip;
+    }
+} elseif (!empty($_SERVER['HTTP_CLIENT_IP']) && filter_var($_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP)) {
     $ip_address = $_SERVER['HTTP_CLIENT_IP'];
 }
 
