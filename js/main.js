@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Navbar background on scroll
     const navbar = document.querySelector('.navbar');
-    if (navbar && navbar.classList.contains('fixed-top')) {
+    if (navbar && navbar.classList.contains('sticky-top')) {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 50) {
                 navbar.style.backgroundColor = 'rgba(33, 37, 41, 0.95)';
