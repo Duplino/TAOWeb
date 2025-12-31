@@ -65,6 +65,9 @@ function updateFilteredTitle(filterHash) {
     
     const appName = applicationNames[filterHash] || filterHash.replace(/-/g, ' ');
     
+    // Update breadcrumb
+    updateBreadcrumb(appName);
+    
     // Update subtitle
     const subtitle = document.getElementById('pageSubtitle');
     if (subtitle) {
@@ -85,6 +88,9 @@ function updateFilteredTitle(filterHash) {
 
 // Reset titles to default
 function resetTitles() {
+    // Reset breadcrumb to default (remove subsection)
+    resetBreadcrumb();
+    
     const subtitle = document.getElementById('pageSubtitle');
     if (subtitle) {
         subtitle.textContent = 'Soluciones de energía para equipos de manejo de materiales y vehículos industriales';
@@ -98,6 +104,53 @@ function resetTitles() {
     const pbAcTitle = document.getElementById('pbAcTitle');
     if (pbAcTitle) {
         pbAcTitle.textContent = 'Modelos Destacados - Tracción Pb-Ac';
+    }
+}
+
+// Update breadcrumb to add subsection
+function updateBreadcrumb(subsectionName) {
+    const breadcrumb = document.querySelector('.breadcrumb');
+    if (!breadcrumb) return;
+    
+    // Remove any existing subsection item
+    const existingSubsection = breadcrumb.querySelector('.breadcrumb-item-subsection');
+    if (existingSubsection) {
+        existingSubsection.remove();
+    }
+    
+    // Update the "Tracción" item to be a link instead of active
+    const traccionItem = breadcrumb.querySelector('.breadcrumb-item:last-child');
+    if (traccionItem && traccionItem.classList.contains('active')) {
+        traccionItem.classList.remove('active', 'text-white');
+        traccionItem.removeAttribute('aria-current');
+        traccionItem.innerHTML = `<a href="index.html" class="text-white-50">Tracción</a>`;
+    }
+    
+    // Add new subsection breadcrumb item
+    const subsectionItem = document.createElement('li');
+    subsectionItem.className = 'breadcrumb-item breadcrumb-item-subsection active text-white';
+    subsectionItem.setAttribute('aria-current', 'page');
+    subsectionItem.textContent = subsectionName;
+    breadcrumb.appendChild(subsectionItem);
+}
+
+// Reset breadcrumb to default state
+function resetBreadcrumb() {
+    const breadcrumb = document.querySelector('.breadcrumb');
+    if (!breadcrumb) return;
+    
+    // Remove subsection item if exists
+    const existingSubsection = breadcrumb.querySelector('.breadcrumb-item-subsection');
+    if (existingSubsection) {
+        existingSubsection.remove();
+    }
+    
+    // Restore "Tracción" item to active state
+    const traccionItem = breadcrumb.querySelector('.breadcrumb-item:last-child');
+    if (traccionItem && !traccionItem.classList.contains('active')) {
+        traccionItem.classList.add('active', 'text-white');
+        traccionItem.setAttribute('aria-current', 'page');
+        traccionItem.textContent = 'Tracción';
     }
 }
 
