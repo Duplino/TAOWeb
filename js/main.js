@@ -4,7 +4,7 @@
 const MOBILE_BREAKPOINT = 992; // Matches Bootstrap's lg breakpoint
 const CLOSE_BUTTON_AREA_SIZE = 56; // 40px button + 1rem (16px) margin
 
-// Contact Form Handler
+// General Website Functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu close button handler
     const navbarCollapse = document.getElementById('navbarNav');
@@ -33,30 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     bsCollapse.hide();
                 }
             });
-        });
-    }
-    
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formMessage = document.getElementById('formMessage');
-            const formData = new FormData(contactForm);
-            
-            // Simulate form submission (in production, this would send to a server)
-            setTimeout(() => {
-                formMessage.classList.remove('d-none', 'alert-danger');
-                formMessage.classList.add('alert-success');
-                formMessage.innerHTML = '<i class="bi bi-check-circle me-2"></i>¡Gracias por contactarnos! Te responderemos pronto.';
-                contactForm.reset();
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.classList.add('d-none');
-                }, 5000);
-            }, 500);
         });
     }
     
